@@ -1,14 +1,11 @@
 <!doctype html>
 <html lang="ru">
+
 <head>
-  <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
-  <title>Hello, world!</title>
+  <title></title>
 </head>
 
 <body>
@@ -24,50 +21,25 @@
   <div class="row">
     <div class="col-3">
       <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-      <a class="nav-link" style="color: #decdbd" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="button" aria-controls="v-pills-home" aria-selected="true">Home</a>
-      <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="button" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
-      <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="button" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
-      <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="button" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
-    </div>
+        <a class="nav-link" style="color: #decdbd" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="button" aria-controls="v-pills-home" aria-selected="true">Home</a>
+        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="button" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
+        <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="button" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
+        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="button" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
+      </div>
     </div>
     <div class="col-6">
       <div class="row row-cols-1 row-cols-md-3">
+        {% for food in form %}
         <div class="col mb-4">
           <div class="card h-100">
             <img src="https://i.pinimg.com/236x/32/37/ea/3237eaca38d1a60c49ceae6f6a63c553--miniature-dolls-miniature-food.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Название еды №1</h5>
-              <p class="card-text">Описание еды, куча текста, ололо как вкусно и т.д.</p>
+              <h5 class="card-title">{{food.name}}</h5>
+              <p class="card-text">{{food.description}}</p>
             </div>
           </div>
         </div>
-        <div class="col mb-4">
-          <div class="card h-100">
-            <img src="https://avatars.mds.yandex.net/get-pdb/25978/d833cdba-befb-4c06-af5e-53ccf3aae86f/s1200?webp=false" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Название еды №2</h5>
-              <p class="card-text">Описание еды, куча текста, ололо как вкусно и т.д.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col mb-4">
-          <div class="card h-100">
-            <img src="https://mtdata.ru/u4/photo8782/20315553207-0/original.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Название еды №3</h5>
-              <p class="card-text">Описание еды, куча текста, ололо как вкусно и т.д.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col mb-4">
-          <div class="card h-100">
-            <img src="https://cdn.inmyroom.ru/uploads/food_post/teaser/1b/1bf2/jpg_2000_1bf20523-673a-4ec1-bcb0-8a9a8dcd3f0d.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Название еды №4</h5>
-              <p class="card-text">Описание еды, куча текста, ололо как вкусно и т.д.</p>
-            </div>
-          </div>
-        </div>
+        {% endfor %}
       </div>
     </div>
     <div class="col-3">
@@ -75,9 +47,6 @@
   </div>
 </div>
 
-{% block content %}
-{{form}}
-{% endblock %}
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>

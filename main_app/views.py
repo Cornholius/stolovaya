@@ -6,6 +6,7 @@ from .forms import FoodForm
 class MainPage(View):
 
     def get(self, request):
-        form = FoodForm()
-        return render(request, 'main/index.html', {'form': form})
+        menu = Food.objects.filter(type='002')
+        print(menu)
+        return render(request, 'main/index.html', {'form': menu})
 
