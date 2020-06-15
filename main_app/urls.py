@@ -7,5 +7,6 @@ from . import views
 
 
 urlpatterns = [
-    path('', views.MainPage.as_view(), name='main')
+    path('', views.MainPage.as_view(), name='main'),
+    path('menu/<menu_type>', views.Menu.as_view(), name='menulist')
 ]

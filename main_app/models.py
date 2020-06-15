@@ -6,7 +6,7 @@ class Food(models.Model):
     description = models.CharField(max_length=200)
     price = models.IntegerField()
     food_type = [('select', 'Выбери тип продукта'),
-                 ('001', 'Первые блюда'),
-                 ('002', 'Вторые блюда'),
-                 ('003', 'Салаты')]
+                 ('First_course', 'Первые блюда'),
+                 ('Second_course', 'Вторые блюда'),
+                 ('Salads', 'Салаты')]
     type = models.CharField(max_length=20, choices=food_type, default='')

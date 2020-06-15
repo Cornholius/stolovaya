@@ -12,20 +12,25 @@
 
 <div class="jumbotron jumbotron-fluid" style="background: #decdbd;">
   <div class="container">
-    <h1 class="display-5">ООО «Пошла родимая»</h1>
-    <p class="lead">Описание компании, пожелания, стихи, да что угодно, если надо</p>
+    <h1 class="display-5">some text, if needed</h1>
+    <p class="lead">some text, if needed</p>
   </div>
 </div>
 
 <div class="container-fluid" style="padding: 30px;">
   <div class="row">
     <div class="col-3">
-      <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-        <a class="nav-link" style="color: #decdbd" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="button" aria-controls="v-pills-home" aria-selected="true">Home</a>
-        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="button" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
-        <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="button" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
-        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="button" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
+      <div class="list-group list-group-flush">
+        <a href="/menu/First_course" style="font-size: 20px" class="list-group-item list-group-item-action text-right">Первые бдюда</a>
+        <a href="/menu/Second_course" style="font-size: 20px" class="list-group-item list-group-item-action text-right">Вторые блюда</a>
+        <a href="/menu/Salads" style="font-size: 20px" class="list-group-item list-group-item-action text-right">Салаты</a>
       </div>
+<!--      <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">-->
+<!--        <a href="/Salads">12321312312</a>-->
+<!--        <a class="nav-link" id="First_course" data-toggle="pill" href="/First_course" role="tab" aria-controls="v-pills-home" aria-selected="true">Первые бдюда</a>-->
+<!--        <a class="nav-link" id="Second_course" data-toggle="pill" href="/Second_course" role="tab" aria-controls="v-pills-home" aria-selected="true">Вторые блюда</a>-->
+<!--        <a class="nav-link" id="Salads" data-toggle="pill" href="/Salads" role="tab" aria-controls="v-pills-home" aria-selected="true">Салаты</a>-->
+<!--      </div>-->
     </div>
     <div class="col-6">
       <div class="row row-cols-1 row-cols-md-3">
@@ -37,6 +42,7 @@
               <h5 class="card-title">{{food.name}}</h5>
               <p class="card-text">{{food.description}}</p>
             </div>
+            <div class="card-footer text-center">Цена: {{food.price}}р.</div>
           </div>
         </div>
         {% endfor %}
