@@ -1,8 +1,8 @@
 {% extends 'include/base.html' %}
 
 {% block content %}
-<div class="col-6">
-  <div class="row row-cols-1 row-cols-md-3">
+<div class="col-10 offset-1">
+  <div class="row row-cols-1 row-cols-md-5">
     {% for food in form %}
     <div class="col mb-4">
       <div class="card h-100">
@@ -12,6 +12,7 @@
           <p class="card-text">{{food.description}}</p>
         </div>
         <div class="card-footer text-center">Цена: {{food.price}}р.</div>
+        <button type="button" class="btn btn-success">Купить</button>
       </div>
     </div>
     {% endfor %}

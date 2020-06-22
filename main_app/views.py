@@ -7,7 +7,7 @@ class MainPage(View):
 
     def get(self, request):
         menu_list = Food.objects.all()
-        return render(request, 'main/today.html', {'form': menu_list})
+        return render(request, 'main/menulist.html', {'form': menu_list})
 
 
 class Menu(View):
@@ -21,5 +21,5 @@ class Menu(View):
 class TodayInMenu(View):
 
     def get(self, request):
-        menu_list = Food.objects.filter(type='Salads')
+        menu_list = Food.objects.filter(type='salads')
         return render(request, 'main/today.html', {'form': menu_list})
