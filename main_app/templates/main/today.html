@@ -1,0 +1,27 @@
+{% extends 'include/base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <!--  <div class="row row-cols-1 row-cols-md-3">-->
+        <div class="row row-cols-1 row-cols-md-2">
+            {% for food in form %}
+            <div class="card mb-3">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="https://i.pinimg.com/236x/32/37/ea/3237eaca38d1a60c49ceae6f6a63c553--miniature-dolls-miniature-food.jpg" class="card-img-top" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{food.name}}</h5>
+                            <p class="card-text">{{food.description}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!--</div>-->
+{% endblock %}
