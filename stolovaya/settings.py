@@ -25,7 +25,7 @@ SECRET_KEY = 'p@4hujzkbyxdas3xj1%*a0ooujenb*tc-il!q@i^b0n)t40rvh'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '10.10.10.64', 'it-2.local']
+ALLOWED_HOSTS = ['127.0.0.1', '10.10.10.64', 'it-2.local', '192.168.1.2']
 
 
 # Application definition
@@ -37,8 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main_app',
-    'cart'
+    'main_app'
 ]
 
 MIDDLEWARE = [
@@ -63,8 +62,7 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-                'cart.context_processor.cart_total_amount'
+                'django.contrib.messages.context_processors.messages'
             ],
         },
     },
@@ -121,5 +119,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-
-CART_SESSION_ID = 'cart'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
