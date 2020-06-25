@@ -13,12 +13,11 @@
 
 <div class="jumbotron jumbotron-fluid" style="margin-bottom: 0; height: 380px; background: #decdbd; background-image: url('{% static 'images/phone_main.jpg' %}')">
     <div class="container">
-        <h1 class="display-5" style="color: #808080; text-shadow: 2px 2px 2px #000">Какой нибудь текст, если оно вообще тут надо</h1>
-<!--        <p class="lead">some text, if needed</p>-->
+        <h1 class="display-5" style="color: #808080; text-shadow: 2px 2px 2px #000">Текстовый блок - описание и контакты</h1>
     </div>
 </div>
 
-<nav class="navbar navbar-expand-lg navbar-light">
+<nav class="navbar navbar-expand-lg navbar-light" style="{{visible}}">
     <div class="btn-group ml-auto">
         <button class="navbar-toggler mr-1 " type="button" >
             <a class="navbar-brand mx-auto" href="../">Корзина</a>
@@ -30,7 +29,7 @@
     <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
         <ul class="navbar-nav mr-1">
             <li class="nav-item"><a class="nav-link" style="font-size: 24px;" href="../">всё меню(для тестов)<span class="sr-only">(current)</span></a></li>
-            <li class="nav-item"><a class="nav-link" style="font-size: 24px;" href="/business_lunch">Бизнес-ланчи<span class="sr-only">(current)</span></a></li>
+            <li class="nav-item"><a class="nav-link" style="font-size: 24px; color: #2b2b2b" href="/business_lunch"><img src='{% static 'images/lunch32.png' %}'> Бизнес-ланчи<span class="sr-only">(current)</span></a></li>
             <li class="nav-item"><a class="nav-link" style="font-size: 24px;" href="/menu/soups">Супы<span class="sr-only">(current)</span></a></li>
             <li class="nav-item"><a class="nav-link" style="font-size: 24px;" href="/menu/hot_course">Горячее<span class="sr-only">(current)</span></a></li>
             <li class="nav-item"><a class="nav-link" style="font-size: 24px;" href="/menu/garnishes">Гарниры<span class="sr-only">(current)</span></a></li>
@@ -39,15 +38,7 @@
         </ul>
     </div>
 </nav>
-<!--Навигационная панель горизонтальная-->
-<!--<nav class="nav nav-pills nav justify-content-center" style="background: #decdbd; background-image: url('{% static 'images/menu_bg.jpg' %}')">-->
-<!--  <a class="nav-item nav-link rounded-0" style="font-size: 24px; color: #2b2b2b" href="/business_lunch">Бизнес-ланчи</a>-->
-<!--  <a class="nav-item nav-link rounded-0" style="font-size: 24px; color: #2b2b2b" href="/menu/soups">Супы</a>-->
-<!--  <a class="nav-item nav-link rounded-0" style="font-size: 24px; color: #2b2b2b" href="/menu/hot_course">Горячее</a>-->
-<!--  <a class="nav-item nav-link rounded-0" style="font-size: 24px; color: #2b2b2b" href="/menu/garnishes">Гарниры</a>-->
-<!--  <a class="nav-item nav-link rounded-0" style="font-size: 24px; color: #2b2b2b" href="/menu/salads">Салаты</a>-->
-<!--  <a class="nav-item nav-link rounded-0" style="font-size: 24px; color: #2b2b2b" href="/menu/drinks">Напитки</a>-->
-<!--</nav>-->
+
 <div class="container-fluid" style="padding: 0px;">
     {% block content %}
     {% endblock %}

@@ -1,11 +1,14 @@
 {% extends 'include/base.html' %}
-
 {% block content %}
-<div class="col-sm-12">
+<div class="col-sm-10 mx-auto">
+    <h2 style="padding: 10px">Текстовый блок призыв оформлять заказ заранее из более широкого меню</h2>
+    <h3>Текстовый блок короткая инструкция - выбирай из меню, отправляй заявку и мы свяжемся</h3>
+    <div class="row justify-content-center" style="padding: 30px">
+        <h2>Бизнес-ланчи на сегодня</h2> </div>
     <div class="row row-cols-1 row-cols-md-2">
         {% for food in form %}
         <div class="col mb-4">
-            <div class="card mb-3">
+            <div class="shadow p-5 card mb-3">
                 <div class="row no-gutters">
                     <div class="col-md-4">
                         <img src="https://i.pinimg.com/236x/32/37/ea/3237eaca38d1a60c49ceae6f6a63c553--miniature-dolls-miniature-food.jpg" class="card-img-top" alt="...">
@@ -14,11 +17,13 @@
                         <div class="card-body">
                             <h5 class="card-title">{{food.name}}</h5>
                             <p class="card-text">{{food.description}}</p>
+                            <p>Цена: {{food.price}}р.</p>
+                            <button type="button" class="btn btn-success">Купить</button>
                         </div>
                     </div>
                 </div>
-                <div class="card-footer text-center">Цена: {{food.price}}р.</div>
-                <button type="button" class="btn btn-success">Купить</button>
+<!--                <div class="card-footer text-center">Цена: {{food.price}}р.</div>-->
+<!--                <button type="button" class="btn btn-success">Купить</button>-->
             </div>
         </div>
         {% endfor %}
