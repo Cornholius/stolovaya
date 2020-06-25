@@ -22,5 +22,6 @@ class Menu(View):
 class TodayInMenu(View):
 
     def get(self, request):
+        visible = 'display: none'
         menu_list = Food.objects.filter(type='salads')
-        return render(request, 'main/today.html', {'form': menu_list})
+        return render(request, 'main/today.html', {'form': menu_list, 'visible': visible})
