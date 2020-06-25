@@ -11,7 +11,12 @@
           <h5 class="card-title">{{food.name}}</h5>
           <p class="card-text">{{food.description}}</p>
         </div>
-        <div class="card-footer text-center">Цена: {{food.price}}р.</div>
+        <div class="card-footer text-center">
+          <form action="{% url "cart:cart_add" food.id %}" method="post">
+    {{ cart_product_form }}
+    {% csrf_token %}
+    <input type="submit" value="Add to cart">
+</form>Цена: {{food.price}}р.</div>
         <button type="button" class="btn btn-success">Купить</button>
       </div>
     </div>

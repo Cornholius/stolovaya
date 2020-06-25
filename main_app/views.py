@@ -1,13 +1,17 @@
 from django.shortcuts import render
 from django.views import View
 from .models import Food
+from cart.forms import CartAddProductForm
 
 
 class MainPage(View):
 
     def get(self, request):
         menu_list = Food.objects.all()
-        return render(request, 'main/menulist.html', {'form': menu_list})
+        cart_product_form = CartAddProductForm()
+
+        return render(request, 'main/menulist.html', {'form': menu_list,
+                                                      'cart_product_form': cart_product_form})
 
 
 class Menu(View):
