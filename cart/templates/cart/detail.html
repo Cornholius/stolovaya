@@ -21,7 +21,9 @@
             <td>{{ item.quantity }}</td>
             <td class="num">{{ item.price }} р.</td>
             <td class="num">{{ item.total_price }} р.</td>
-            <td><a class="btn btn-danger btn-sm" href="{% url "cart:cart_remove" product.id%}">Удалить</a></td>
+            {% if item %}
+            <td><a class="btn btn-danger btn-sm" href="{% url 'cart:cart_remove' product.id%}">Удалить</a></td>
+            {% endif %}
         </tr>
 
         {% endwith %}
@@ -36,8 +38,8 @@
 </div>
 
 <div class="col-lg-6 mx-auto text-center">
-      <a class="btn btn-success mr-1" style="width: 220px" href="../">Продолжить покупки</a>
-    <a class="btn btn-warning" style="width: 220px" href="{product.id%}">Оплатить</a>
+      <a class="btn btn-success mr-1" style="width: 220px" href="{% url 'main_app:main' %}">Продолжить покупки</a>
+    <a class="btn btn-warning" style="width: 220px" href="#">Оплатить</a>
         </div>
         </div>
 {% endblock %}
