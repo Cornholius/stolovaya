@@ -12,27 +12,29 @@
 <body>
 
 <div class="jumbotron jumbotron-fluid" style="margin-bottom: 0; height: 380px; background: #decdbd; background-image: url('{% static 'images/phone_main.jpg' %}')">
-    <div class="container">
-        <div class="card" style="width: 18rem;">
-  <div class="card-body">
-      {% with total_items=cart|length %}
-      {% if cart|length > 0 %}
-      <h5 class="card-title">В корзине:</h5>
-      <h6 class="card-text">{{ total_items }} Блюдо{{ total_items|pluralize }}
-      <h6 class="card-text">Общая сумма: {{ cart.get_total_price }} р.</h6>
-      {% else %}
-      <h5 class="card-title">Ваша корзина пуста:</h5>
-      {% endif %}
-      {% endwith %}
-      <a href="{% url 'cart:cart_detail' %}" class="btn btn-success btn-sm active" role="button" aria-pressed="true">корзина</a>
-
-  </div>
-</div>
-        <h1 class="display-5" style="color: #808080; text-shadow: 2px 2px 2px #000">Текстовый блок - описание и контакты</h1>
+    <div class="col-sm-6 ml-auto text-right">
+        <h5 class="text-right">Текстовый блок - описание и контакты</h5>
     </div>
-    <a href="{% url 'main_app:allmenu' %}" class="btn btn-success btn-sm active" role="button" aria-pressed="true">всё меню</a>
-</div>
+    <div class="col-sm-2 ml-auto" style="margin-top: 80px;">
+        <div class="card ml-auto " style="width: 12rem; background: rgba(191, 189, 189, 0.3);">
+            <div class="card-body">
+                {% with total_items=cart|length %}
+                {% if cart|length > 0 %}
+                <div class="row"><h5 class="card-title">В корзине:</h5></div>
+                <div class="row" style="margin-top: 10px"><h6 class="card-text">Всего блюд: {{total_items }}</h6></div>
+                <div class="row" style="margin-top: 10px"><h6 class="card-text">На сумму: {{ cart.get_total_price }} р.</h6></div>
+                {% else %}
+                <h5 class="card-title">Ваша корзина пуста:</h5>
+                {% endif %}
+                {% endwith %}
+                <div class="col-lg-12 mx-auto text-center" style="margin-top: 20px">
+                    <a class="btn btn-outline-dark btn-sm w-100" href="{% url 'cart:cart_detail' %}">корзина</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
+</div>
 
 <nav class="navbar navbar-expand-lg navbar-light" style="{{visible}}">
     <div class="btn-group ml-auto">
