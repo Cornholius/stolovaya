@@ -17,7 +17,6 @@ class Menu(View):
         if menu_type:
             menu_list = Food.objects.filter(type=menu_type)
             cart_form = CartAddProductForm
-            print(request.GET)
             return render(request, 'main/menulist.html', {'form': menu_list, 'cart_product_form': cart_form})
 
 
@@ -26,11 +25,15 @@ class TodayInMenu(View):
     def get(self, request):
         visible = 'display: none'
         menu_list = Food.objects.filter(type='salads')
-        return render(request, 'main/today.html', {'form': menu_list, 'visible': visible})
+        cart_form = CartAddProductForm
+
+        return render(request, 'main/today.html', {'form': menu_list, 'cart_product_form': cart_form, 'visible': visible})
 
 
 class AllMenu(View):
 
     def get(self, request):
+        print(request.get)
         menu_list = Food.objects.all()
-        return render(request, 'main/menulist.html', {'form': menu_list})
+        cart_form = CartAddProductForm
+        return render(request, 'main/menulist.html', {'form': menu_list, 'cart_product_form': cart_form})

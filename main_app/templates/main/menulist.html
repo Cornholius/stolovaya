@@ -1,5 +1,5 @@
 {% extends 'include/base.html' %}
-
+{% load bootstrap %}
 {% block content %}
 <div class="col-lg-10 mx-auto">
     <div class="row row-cols-1 row-cols-lg-4">
@@ -12,13 +12,11 @@
                     <p class="card-text">{{food.description}}</p>
                     <p>Цена: {{food.price}}р.</p>
                 </div>
-                <div class="card-footer text-center">
-                    <form action="{% url "cart:cart_add" food.id %}" method="post">
-                    {{ cart_product_form }}
+                <form action="{% url 'cart:cart_add' food.id %}" method="post">
                     {% csrf_token %}
+                    {{ cart_product_form|bootstrap }}
                     <button type="submit" name="type" value="{{food.type}}" class="btn btn-success">В корзину</button>
-                    </form>
-                </div>
+                </form>
             </div>
         </div>
         {% endfor %}
