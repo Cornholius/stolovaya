@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bootstrapform',
     'main_app',
-    'cart'
+    'cart',
+    'orders',
+    'celery'
 ]
 
 MIDDLEWARE = [
