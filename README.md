@@ -17,7 +17,7 @@ sudo sh -c 'echo_supervisord_conf > /etc/supervisor/supervisord.conf'
 
 для запуска супервизора вместе с системой создаём файл:
 sudo touch /etc/systemd/system/supervisord.service
-"""
+----------
 [Unit]
 Description=Supervisor daemon
 Documentation=http://supervisord.org
@@ -32,7 +32,7 @@ RestartSec=42s
 [Install]
 WantedBy=multi-user.target
 Alias=supervisord.service
-"""
+----------
 запускаем супервизор ак службу
 sudo systemctl start supervisord.service
 (проверяем работу)
