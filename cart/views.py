@@ -18,7 +18,8 @@ class CartView(View):
 
         else:
             cart = Cart(request)
-            return render(request, 'cart/detail.html', {'cart': cart})
+            visible = 'display: none'
+            return render(request, 'cart/detail.html', {'cart': cart, 'visible': visible})
 
     """
     при добавлении товара в корзину из основного меню в метод прилетает id блюда, записывается в корзину

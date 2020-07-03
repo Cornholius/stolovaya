@@ -47,12 +47,54 @@
     </div>
     <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
         <ul class="navbar-nav mr-1">
-            <li class="nav-item"><a class="nav-link" style="font-size: 24px; color: #2b2b2b" href="/business_lunch"><img src="{% static 'images/navbar/lunch32.png' %}"> Бизнес-ланчи<span class="sr-only">(current)</span></a></li>
-            <li class="nav-item"><a class="nav-link" style="font-size: 24px; color: #2b2b2b" href="/menu/soups"><img src="{% static 'images/navbar/soup32.png' %}"> Супы<span class="sr-only">(current)</span></a></li>
-            <li class="nav-item"><a class="nav-link" style="font-size: 24px; color: #2b2b2b" href="/menu/hot_course"><img src="{% static 'images/navbar/hot_course32.png' %}"> Горячее<span class="sr-only">(current)</span></a></li>
-            <li class="nav-item"><a class="nav-link" style="font-size: 24px; color: #2b2b2b" href="/menu/garnishes"><img src="{% static 'images/navbar/garnishes32.png' %}"> Гарниры<span class="sr-only">(current)</span></a></li>
-            <li class="nav-item"><a class="nav-link" style="font-size: 24px; color: #2b2b2b" href="/menu/salads"><img src="{% static 'images/navbar/salads32.png' %}"> Салаты<span class="sr-only">(current)</span></a></li>
-            <li class="nav-item"><a class="nav-link" style="font-size: 24px; color: #2b2b2b" href="/menu/drinks"><img src="{% static 'images/navbar/drinks32.png' %}"> Напитки<span class="sr-only">(current)</span></a></li>
+            <li class="nav-item">
+                <a class="nav-link" style="font-size: 24px; color: #2b2b2b" href="/business_lunch">
+                    <img src="{% static 'images/navbar/lunch32.png' %}"> Бизнес-ланчи
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="font-size: 24px; color: #2b2b2b" href="/menu/soups">
+                    <img src="{% static 'images/navbar/soup32.png' %}"> Супы
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="font-size: 24px; color: #2b2b2b" href="/menu/hot_course">
+                    <img src="{% static 'images/navbar/hot_course32.png' %}"> Горячее
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="font-size: 24px; color: #2b2b2b" href="/menu/garnishes">
+                    <img src="{% static 'images/navbar/garnishes32.png' %}"> Гарниры
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="font-size: 24px; color: #2b2b2b" href="/menu/salads">
+                    <img src="{% static 'images/navbar/salads32.png' %}"> Салаты
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="font-size: 24px; color: #2b2b2b" href="/menu/drinks">
+                    <img src="{% static 'images/navbar/drinks32.png' %}"> Напитки
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="font-size: 24px; color: #2b2b2b" href="{% url 'cart:cart_detail' %}">
+                    <img src="{% static 'images/navbar/cart32.png' %}"> Корзина
+                    <span class="sr-only">(current)</span>
+                    {% with total_items=cart|length %}
+                    <span class="badge">{{total_items }}шт.</span>
+                    {% endwith %}
+                </a>
+            </li>
+
+
+
         </ul>
     </div>
 </nav>
