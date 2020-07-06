@@ -1,0 +1,7 @@
+@media (min-width: 800px) {
+  .invisible-pc { display: none;}
+}
+
+@media (max-width: 767px) {
+  .invisible-mobile { display: none;}
+}
