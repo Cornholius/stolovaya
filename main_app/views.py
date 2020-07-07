@@ -5,7 +5,7 @@ from cart.forms import CartAddProductForm
 
 
 color = ('994848', '48994b', '7f4899', '486e99', 'a63223', '9ba623', '23a66f', '948e8f', )
-
+check = 'True'
 
 class MainPage(View):
 
