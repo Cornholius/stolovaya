@@ -40,28 +40,3 @@
     </div>
 </div>
 {% endblock %}
-
-<!--    <div class="row row-cols-1 row-cols-md-2">-->
-    <!--        {% for food in form %}-->
-    <!--        <div class="col mb-4">-->
-    <!--            <div class="shadow p-5 card mb-3">-->
-<!--                <div class="row no-gutters">-->
-<!--                    <div class="col-md-4">-->
-<!--                        <img src="https://i.pinimg.com/236x/32/37/ea/3237eaca38d1a60c49ceae6f6a63c553&#45;&#45;miniature-dolls-miniature-food.jpg" class="card-img-top" alt="...">-->
-<!--                    </div>-->
-<!--                    <div class="col-md-8">-->
-<!--                        <div class="card-body">-->
-<!--                            <h5 class="card-title">{{food.name}}</h5>-->
-<!--                            <p class="card-text">{{food.description}}</p>-->
-<!--                            <p>Цена: {{food.price}}р.</p>-->
-<!--                            <form action="{% url 'cart:cart_add' food.id %}" method="post">-->
-<!--                                {% csrf_token %}-->
-<!--                                <div class="row">-->
-<!--                                    <div class="mb-2 ml-5">{{cart_product_form|bootstrap }}</div><button type="submit" name="type" value="{{food.type}}" class="btn btn-success h-50 my-auto ml-3">В корзину</button>-->
-<!--                                </div>-->
-<!--                            </form>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->

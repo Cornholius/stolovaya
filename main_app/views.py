@@ -8,8 +8,6 @@ color = ('994848', '48994b', '7f4899', '486e99', 'a63223', '9ba623', '23a66f', '
 class MainPage(View):
 
     def get(self, request):
-        q = request.session
-        print(request.META['OS'])
         menu_list = Food.objects.all()
         cart_form = CartAddProductForm
         return render(request, 'main/menulist.html', {'form': menu_list, 'cart_product_form': cart_form})
