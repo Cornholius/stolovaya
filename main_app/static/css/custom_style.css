@@ -5,3 +5,51 @@
 @media (max-width: 768px) {
   .invisible-mobile { display: none;}
 }
+
+.ololo { animation: show 0.8s;}
+
+@keyframes show {
+from {opacity: 0;} to {opacity: 1;}
+}
+
+
+
+.anchor {
+position: absolute;
+left: 0;
+right: 0;
+z-index: 15;
+}
+
+.anchor .from-left {
+position: relative;
+animation: showLeft 1s;
+z-index: 1;
+}
+
+@keyframes showLeft {
+from {left:-100%;}
+to {left:0;}
+}
+
+.anchor .from-right {
+position: relative;
+animation: showRight 1s;
+z-index: 1;
+}
+
+@keyframes showRight {
+from {right:-100%;}
+to {right:0;}
+}
+
+.anchor .from-bot {
+position: relative;
+animation: showBot 1s;
+z-index: 1;
+}
+
+@keyframes showBot {
+from {bot:-100%;}
+to {bot:0;}
+}

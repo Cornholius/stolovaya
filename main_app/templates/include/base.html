@@ -7,90 +7,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/custom_style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
     <title></title>
 </head>
 
 <body>
 
-<div class="jumbotron jumbotron-fluid" style="margin-bottom: 0; height: 380px; background: #decdbd; background-image: url('{% static 'images/phone_main.jpg' %}')">
+<div class="jumbotron jumbotron-fluid" style="margin-bottom: 0; height: 330px; background-image: url('{% static 'images/phone_main.jpg' %}')">
     <div class="col-sm-6 ml-auto text-right">
-        <h5 class="text-right">Текстовый блок - описание и контакты</h5>
+        <h5 class="text-right animate__animated animate__backInLeft">Текстовый блок - описание и контакты</h5>
     </div>
 </div>
 
-    <nav class="navbar navbar-expand-lg navbar-light" style="{{visible}}">
-        <div class="btn-group mr-auto">
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <a class="navbar-brand mx-auto">Меню</a>
-            </button>
-            <button class="navbar-toggler mr-1 " type="button" >
-                <a class="navbar-brand mx-auto" href="{% url 'cart:cart_detail' %}">Корзина
+<nav class="navbar navbar-expand-lg navbar-light" style="{{visible}}">
+    <div class="btn-group mr-auto">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand mx-auto">Меню</a>
+        </button>
+        <button class="navbar-toggler mr-1 " type="button" >
+            <a class="navbar-brand mx-auto" href="{% url 'cart:cart_detail' %}">Корзина
                 {% with total_items=cart|length %}
                 <span class="badge badge-pill badge-dark">{{total_items }}</span></a>
-                {% endwith %}
-            </button>
+            {% endwith %}
+        </button>
 
-        </div>
-        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-            <ul class="navbar-nav mr-1">
-                <li class="nav-item">
-                    <a class="nav-link" style="font-size: 24px; color: #2b2b2b" href="/business_lunch">
-                        <img src="{% static 'images/navbar/lunch32.png' %}"> Бизнес-ланчи
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" style="font-size: 24px; color: #2b2b2b" href="/menu/soups">
-                        <img src="{% static 'images/navbar/soup32.png' %}"> Супы
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" style="font-size: 24px; color: #2b2b2b" href="/menu/hot_course">
-                        <img src="{% static 'images/navbar/hot_course32.png' %}"> Горячее
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" style="font-size: 24px; color: #2b2b2b" href="/menu/garnishes">
-                        <img src="{% static 'images/navbar/garnishes32.png' %}"> Гарниры
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" style="font-size: 24px; color: #2b2b2b" href="/menu/salads">
-                        <img src="{% static 'images/navbar/salads32.png' %}"> Салаты
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" style="font-size: 24px; color: #2b2b2b" href="/menu/drinks">
-                        <img src="{% static 'images/navbar/drinks32.png' %}"> Напитки
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item invisible-mobile">
-                    <a class="nav-link" style="font-size: 24px; color: #2b2b2b" href="{% url 'cart:cart_detail' %}">
-                        <img src="{% static 'images/navbar/cart32.png' %}"> Корзина
-                        <span class="sr-only">(current)</span>
-                        {% with total_items=cart|length %}
-                        <span class="badge badge-pill badge-dark">{{total_items }}</span>
-                        {% endwith %}
-                    </a>
-                </li>
-
-
-
-            </ul>
-        </div>
-    </nav>
-
-    <div class="container-fluid" style="padding: 0px;">
-        {% block content %}
-        {% endblock %}
     </div>
-    <script src="{% static 'js/jquery-3.5.1.slim.min.js' %}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav mr-1">
+            <li class="nav-item">
+                <a class="nav-link" style="font-size: 24px; color: #2b2b2b" href="/business_lunch">
+                    <img src="{% static 'images/navbar/lunch32.png' %}"> Бизнес-ланчи
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="font-size: 24px; color: #2b2b2b" href="/menu/soups">
+                    <img src="{% static 'images/navbar/soup32.png' %}"> Супы
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="font-size: 24px; color: #2b2b2b" href="/menu/hot_course">
+                    <img src="{% static 'images/navbar/hot_course32.png' %}"> Горячее
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="font-size: 24px; color: #2b2b2b" href="/menu/garnishes">
+                    <img src="{% static 'images/navbar/garnishes32.png' %}"> Гарниры
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="font-size: 24px; color: #2b2b2b" href="/menu/salads">
+                    <img src="{% static 'images/navbar/salads32.png' %}"> Салаты
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="font-size: 24px; color: #2b2b2b" href="/menu/drinks">
+                    <img src="{% static 'images/navbar/drinks32.png' %}"> Напитки
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item invisible-mobile">
+                <a class="nav-link" style="font-size: 24px; color: #2b2b2b" href="{% url 'cart:cart_detail' %}">
+                    <img src="{% static 'images/navbar/cart32.png' %}"> Корзина
+                    <span class="sr-only">(current)</span>
+                    {% with total_items=cart|length %}
+                    <span class="badge badge-pill badge-dark">{{total_items }}</span>
+                    {% endwith %}
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container-fluid" style="padding: 0px;">
+    {% block content %}
+    {% endblock %}
+</div>
+<script src="{% static 'js/jquery-3.5.1.slim.min.js' %}"></script>
+<script src="{% static 'js/123.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
 </body>
 </html>
