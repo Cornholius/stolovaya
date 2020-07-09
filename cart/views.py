@@ -36,7 +36,7 @@ class CartView(View):
             cart.add(product=product,
                      quantity=cd['quantity'],
                      update_quantity=cd['update'])
-            if request.POST['type'] == '2':
+            if request.POST['type'] == '1':
                 return redirect('cart:cart_detail')
             else:
                 type = Category.objects.get(id=request.POST['type']).slug
