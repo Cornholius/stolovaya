@@ -1,36 +1,33 @@
 {% extends 'include/base.html' %}
 {% load bootstrap %}
 {% block content %}
-<div class="col-lg-10 mx-auto" style="margin-top: 20px">
-    <div class="row row-cols-1 row-cols-lg-4 justify-content-center">
-        {% for food in form %}
-        <div class="col mb-4">
-            <div class="shadow card animate__animated animate__slideInUp animate__fast" style="min-width: 300px; margin-top: 5px; border: 0; width: 100%">
-                <img class="card-img-top" src="https://i.pinimg.com/236x/32/37/ea/3237eaca38d1a60c49ceae6f6a63c553--miniature-dolls-miniature-food.jpg" data-toggle="collapse" data-target="#demo{{food.id}}" alt="...">
-                <div class="card-body" data-toggle="collapse" data-target="#demo{{food.id}}">
-                    <h5 class="card-title text-center">{{food.name}}</h5>
-                    <div id="demo{{food.id}}" class="collapse">
-                        <p>{{food.description}}</p>
-                        <p>Цена: {{food.price}}р.</p>
-                    </div>
-                </div>
-                <form action="{% url 'cart:cart_add' food.id %}" method="post">
-                    {% csrf_token %}
-                    <div class="container">
-                        <div class="d-flex flex-row justify-content-between ">
-                            <div class="block">{{cart_product_form|bootstrap}}</div>
-                            <div class="block mt-4">
-                                <button type="submit" name="type" value="{{food.category_id}}" class="btn btn-success">В корзину</button>
-                            </div>
-                            <div class="block mt-4">
-                                <div class="btn btn-outline-success">{{food.price}}р.</div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
+<div class="card-deck col-lg-10 mx-auto">
+    {% for food in form %}
+    <div class="shadow card animate__animated animate__slideInUp animate__fast"
+         style="min-width: 300px; 5px; border: 0; width: 100%">
+        <img class="card-img-top" src="https://i.pinimg.com/236x/32/37/ea/3237eaca38d1a60c49ceae6f6a63c553--miniature-dolls-miniature-food.jpg" data-toggle="collapse" data-target="#demo{{food.id}}" alt="...">
+        <div class="card-body" data-toggle="collapse" data-target="#demo{{food.id}}">
+            <h5 class="card-title text-center">{{food.name}}</h5>
+            <div id="demo{{food.id}}" class="collapse">
+                <p>{{food.description}}</p>
+                <p>Цена: {{food.price}}р.</p>
             </div>
         </div>
-        {% endfor %}
+        <form action="{% url 'cart:cart_add' food.id %}" method="post">
+            {% csrf_token %}
+            <div class="container">
+                <div class="d-flex flex-row justify-content-between ">
+                    <div class="block">{{cart_product_form|bootstrap}}</div>
+                    <div class="block mt-4">
+                        <button type="submit" name="type" value="{{food.category_id}}" class="btn btn-success">В корзину</button>
+                    </div>
+                    <div class="block mt-4">
+                        <div class="btn btn-outline-success">{{food.price}}р.</div>
+                    </div>
+                </div>
+            </div>
+        </form>
     </div>
+    {% endfor %}
 </div>
 {% endblock %}
