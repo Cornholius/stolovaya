@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .cart import Cart
 from .forms import CartAddProductForm
-from main_app.models import Food
+from main_app.models import Food, Category
 from django.views import View
 
 
@@ -28,7 +28,6 @@ class CartView(View):
     """
 
     def post(self, request, product_id):
-        print(request.POST)
         cart = Cart(request)
         product = get_object_or_404(Food, id=product_id)
         form = CartAddProductForm(request.POST)
@@ -37,10 +36,11 @@ class CartView(View):
             cart.add(product=product,
                      quantity=cd['quantity'],
                      update_quantity=cd['update'])
-            if request.POST['type'] == 'business_lunch':
+            if request.POST['type'] == '1':
                 return redirect('cart:cart_detail')
             else:
-                return redirect('/menu/{}'.format(request.POST['type']))
+                type = Category.objects.get(id=request.POST['type']).slug
+                return redirect('/menu/{}'.format(type))
 
     def cart_remove(self, request, product_id):
         cart = Cart(request)

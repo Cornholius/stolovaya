@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="invisible-mobile">
-    <div class="container col-6 mx-auto" style="margin-top:60px">
+    <div class="container col-6 mx-auto animate__animated animate__fadeInDown" style="margin-top:60px">
         <h2>Ваш заказ:</h2>
         <table class="table table-borderless col-sm-12">
             <thead>
@@ -31,9 +31,9 @@
             {% endwith %}
             {% endfor %}
             <tr class="total">
-                <td>Итоговая сумма заказа:</td>
+                <td><h4>Итоговая сумма заказа:</h4></td>
                 <td colspan="2"></td>
-                <td class="num">{{ cart.get_total_price }} р.</td>
+                <td class="num"><h4>{{ cart.get_total_price }} р.</h4></td>
             </tr>
             </tbody>
         </table>
@@ -45,7 +45,7 @@
 </div>
 
 <div class="invisible-pc">
-    <ul class="list-group">
+    <ul class="list-group animate__animated animate__fadeInDown">
         {% for item in cart %}
         {% with product=item.product %}
         <li class="list-group-item">
@@ -61,10 +61,13 @@
         </li>
         {% endwith %}
         {% endfor %}
+        <li class="list-group-item text-right">
+            <h4>Итого к оплате: {{ cart.get_total_price }} р.</h4>
+        </li>
     </ul>
     <div class="d-flex justify-content-around p-2">
         <a class="btn btn-success mr-1" style="width: 220px" href="{% url 'main_app:main' %}">Продолжить покупки</a>
-        <a class="btn btn-warning" style="width: 220px" href="{% url "orders:order_create" %}">Оплатить</a>
+        <a class="btn btn-warning" style="width: 220px" href="{% url 'orders:order_create' %}">Оплатить</a>
     </div>
 </div>
 {% endblock %}
