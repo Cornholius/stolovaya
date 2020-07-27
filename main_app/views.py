@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views import View
-from .models import Food, Category
+from .models import Food, Category, Weeks, Days
 from cart.forms import CartAddProductForm
 
 
@@ -10,9 +10,15 @@ check = 'True'
 class MainPage(View):
 
     def get(self, request):
-        soup = Food.objects.filter(category_id=7)
+        week = Weeks.objects.filter(id=1)
+        for day in week:
+            for item in day.days.filter(day='Понедельник'):
+                soup = item.food.filter(category_id=7)
+                salad = item.food.filter(category_id=10)
+                print(soup)
+                print(salad)
         cart_form = CartAddProductForm
-        return render(request, 'main/mainpage.html', {'soup': soup, 'cart_product_form': cart_form})
+        return render(request, 'main/mainpage.html', {'soup': soup, 'salad': salad, 'cart_product_form': cart_form})
 
 
 class Menu(View):

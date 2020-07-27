@@ -45,7 +45,13 @@ class Days(models.Model):
     slug = models.SlugField(max_length=20, unique=True)
     food = models.ManyToManyField(Food, verbose_name='тест1', related_name='test2', blank=True)
 
+    def __str__(self):
+        return self.day
+
 
 class Weeks(models.Model):
     week_number = models.IntegerField(default=0)
     days = models.ManyToManyField(Days, verbose_name='тест3', related_name='test4', blank=True)
+
+    def __str__(self):
+        return str(self.week_number)

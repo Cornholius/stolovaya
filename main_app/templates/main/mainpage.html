@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block content %}
+
 <!-- Start menu-area Area -->
 <section class="menu-area section-gap" id="menu">
     <div class="container">
@@ -27,7 +28,7 @@
         <div class="filters-content">
             <div class="row grid">
                 <div class="col-md-6 all Breakfast">
-                    {% for food in soup %}
+                    {% for food in salad %}
                     <div class="single-menu">
                         <div class="title-wrap d-flex justify-content-between">
                             <h4>{{food.name}}, {{food.weight}}{{food.unit}}</h4>
