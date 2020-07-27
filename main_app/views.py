@@ -10,9 +10,9 @@ check = 'True'
 class MainPage(View):
 
     def get(self, request):
-        menu_list = Food.objects.all()
+        soup = Food.objects.filter(category_id=7)
         cart_form = CartAddProductForm
-        return render(request, 'main/mainpage.html', {'form': menu_list, 'cart_product_form': cart_form})
+        return render(request, 'main/mainpage.html', {'soup': soup, 'cart_product_form': cart_form})
 
 
 class Menu(View):
