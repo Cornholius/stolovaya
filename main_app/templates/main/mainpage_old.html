@@ -1,0 +1,14 @@
+{% extends 'include/base.html' %}
+{% load static %}
+{% block content %}
+<div class="col-sm-5 mx-auto">
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-sm-6 justify-content-md-center" style="display: flex">
+            <a href="business_lunch/"><img src="{% static 'images/0food_for_today.png' %}"></a>
+        </div>
+        <div class="col-sm-6 justify-content-md-center" style="display: flex">
+            <a href="allmenu/"><img src="{% static 'images/0food_for_tomorrow.png' %}"></a>
+        </div>
+    </div>
+</div>
+{% endblock %}

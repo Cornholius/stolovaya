@@ -25,11 +25,17 @@ class Food(models.Model):
     # week = [('', 'выбери неделю'),
     #         ('1', '1'),
     #         ('2', '2')]
+    unit_type = [('', 'выбрать...'),
+                 ('мл.', 'мл.'),
+                 ('гр.', 'гр.'),
+                 ('шт.', 'шт.')]
 
     category = models.ForeignKey(Category, related_name='products',on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
+    description = models.CharField(max_length=200, blank=True, null=True)
     weight = models.IntegerField(default=0)
     price = models.IntegerField(default=0)
+    unit = models.CharField(max_length=20, choices=unit_type, default='')
     # week = models.CharField(max_length=20, choices=week, default='0')
     # day = models.CharField(max_length=20, choices=days, default='0')
 

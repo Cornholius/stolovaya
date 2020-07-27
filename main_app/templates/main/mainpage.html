@@ -1,14 +1,114 @@
 {% extends 'include/base.html' %}
 {% load static %}
+
 {% block content %}
-<div class="col-sm-5 mx-auto">
-    <div class="row" style="margin-top: 20px;">
-        <div class="col-sm-6 justify-content-md-center" style="display: flex">
-            <a href="business_lunch/"><img src="{% static 'images/0food_for_today.png' %}"></a>
+<!-- Start menu-area Area -->
+<section class="menu-area section-gap" id="menu">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="menu-content pb-70 col-lg-9">
+                <div class="title text-center">
+                    <h1 class="mb-10" style="color: #3d3b3b">В кафе для Вас всегда свежая и вкусная еда!</h1>
+                    <h4 class="mb-10" style="color: #3d3b3b">Сытные завтраки, разнообразные ланчи, ароматная выпечка и десерты</h4>
+                </div>
+            </div>
         </div>
-        <div class="col-sm-6 justify-content-md-center" style="display: flex">
-            <a href="allmenu/"><img src="{% static 'images/0food_for_tomorrow.png' %}"></a>
+
+        <ul class="filter-wrap filters col-lg-12 no-padding">
+            <li data-filter=".Breakfast">Завтраки, выпечка</li>
+            <li data-filter=".Monday">Понедельник</li>
+            <li data-filter=".Tuesday">Вторник</li>
+            <li data-filter=".Wednesday">Среда</li>
+            <li data-filter=".Thursday">Четверг</li>
+            <li data-filter=".Friday">Пятница</li>
+            <li data-filter=".Drinks">Напитки</li>
+        </ul>
+                    
+        <div class="filters-content">
+            <div class="row grid">
+                <div class="col-md-6 all Breakfast">
+                    {% for food in form %}
+                    <div class="single-menu">
+                        <div class="title-wrap d-flex justify-content-between">
+                            <h4>{{food.name}}, {{food.weight}}{{food.unit}}</h4>
+                            <h4 class="price">{{food.price}}р.</h4>
+                        </div>
+                        <p></p>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="col-md-6 all Monday">
+                    <div class="single-menu">
+                        <div class="title-wrap d-flex justify-content-between">
+                            {% for food in form %}
+                            <h4>{{food.name}}</h4>
+                            <h4 class="price">$49</h4>
+                            {% endfor %}
+                        </div>
+                        <p>
+                            Usage of the Internet is becoming more common due to rapid advance.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 all Tuesday">
+                    <div class="single-menu">
+                        <div class="title-wrap d-flex justify-content-between">
+                            <h4>Americano</h4>
+                            <h4 class="price">$49</h4>
+                        </div>
+                        <p>
+                            Usage of the Internet is becoming more common due to rapid advance.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 all Wednesday">
+                    <div class="single-menu">
+                        <div class="title-wrap d-flex justify-content-between">
+                            <h4>Macchiato</h4>
+                            <h4 class="price">$49</h4>
+                        </div>
+                        <p>
+                            Usage of the Internet is becoming more common due to rapid advance.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 all Thursday">
+                    <div class="single-menu">
+                        <div class="title-wrap d-flex justify-content-between">
+                            <h4>Mocha</h4>
+                            <h4 class="price">$49</h4>
+                        </div>
+                        <p>
+                            Usage of the Internet is becoming more common due to rapid advance.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 all Friday">
+                    <div class="single-menu">
+                        <div class="title-wrap d-flex justify-content-between">
+                            <h4>Piccolo Latte</h4>
+                            <h4 class="price">$49</h4>
+                        </div>
+                        <p>
+                            Usage of the Internet is becoming more common due to rapid advance.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 all Drinks">
+                    <div class="single-menu">
+                        <div class="title-wrap d-flex justify-content-between">
+                            <h4>Ristretto</h4>
+                            <h4 class="price">$49</h4>
+                        </div>
+                        <p>
+                            Usage of the Internet is becoming more common due to rapid advance.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
+                    
     </div>
-</div>
+</section>
+<!-- End menu-area Area -->
 {% endblock %}

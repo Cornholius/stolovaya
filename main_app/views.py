@@ -12,7 +12,7 @@ class MainPage(View):
     def get(self, request):
         menu_list = Food.objects.all()
         cart_form = CartAddProductForm
-        return render(request, 'main/index.html', {'form': menu_list, 'cart_product_form': cart_form})
+        return render(request, 'main/mainpage.html', {'form': menu_list, 'cart_product_form': cart_form})
 
 
 class Menu(View):
