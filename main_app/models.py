@@ -15,16 +15,7 @@ class Category(models.Model):
 
 
 class Food(models.Model):
-    # days = [('', 'выбери день'),
-    #         ('Monday', 'понедельник'),
-    #         ('Tuesday', 'вторник'),
-    #         ('Wednesday', 'среда'),
-    #         ('Thursday', 'четверг'),
-    #         ('Friday', 'пятница')]
-    #
-    # week = [('', 'выбери неделю'),
-    #         ('1', '1'),
-    #         ('2', '2')]
+
     unit_type = [('', 'выбрать...'),
                  ('мл.', 'мл.'),
                  ('гр.', 'гр.'),
@@ -47,11 +38,14 @@ class Food(models.Model):
 
     def __str__(self):
         return self.name
-    # food_type = [('select', 'Выбери тип продукта'),
-    #              ('business_lunch', 'Бизнес ланч'),
-    #              ('soups', 'Супы'),
-    #              ('hot_course', 'Горячее'),
-    #              ('garnishes', 'Гарниры'),
-    #              ('salads', 'Салаты'),
-    #              ('drinks', 'Напитки')]
-    # type = models.CharField(max_length=20, choices=food_type, default='')
+
+
+class Days(models.Model):
+    day = models.CharField(max_length=20)
+    slug = models.SlugField(max_length=20, unique=True)
+    food = models.ManyToManyField(Food, verbose_name='тест1', related_name='test2', blank=True)
+
+
+class Weeks(models.Model):
+    week_number = models.IntegerField(default=0)
+    days = models.ManyToManyField(Days, verbose_name='тест3', related_name='test4', blank=True)
