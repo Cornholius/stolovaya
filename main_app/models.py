@@ -15,10 +15,23 @@ class Category(models.Model):
 
 
 class Food(models.Model):
+    # days = [('', 'выбери день'),
+    #         ('Monday', 'понедельник'),
+    #         ('Tuesday', 'вторник'),
+    #         ('Wednesday', 'среда'),
+    #         ('Thursday', 'четверг'),
+    #         ('Friday', 'пятница')]
+    #
+    # week = [('', 'выбери неделю'),
+    #         ('1', '1'),
+    #         ('2', '2')]
+
     category = models.ForeignKey(Category, related_name='products',on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
-    description = models.CharField(max_length=1000)
-    price = models.IntegerField()
+    weight = models.IntegerField(default=0)
+    price = models.IntegerField(default=0)
+    # week = models.CharField(max_length=20, choices=week, default='0')
+    # day = models.CharField(max_length=20, choices=days, default='0')
 
 
     class Meta:

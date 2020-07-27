@@ -30,6 +30,8 @@ class CartView(View):
     def post(self, request, product_id):
         cart = Cart(request)
         product = get_object_or_404(Food, id=product_id)
+        print('==========================', product_id)
+        print('==========================', product)
         form = CartAddProductForm(request.POST)
         if form.is_valid():
             cd = form.cleaned_data

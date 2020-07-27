@@ -1,7 +1,0 @@
-@media (min-width: 767px) {
-  .invisible-pc { display: none;}
-}
-
-@media (max-width: 768px) {
-  .invisible-mobile { display: none;}
-}
