@@ -1,5 +1,7 @@
 {% extends 'include/base.html' %}
 {% load static %}
+<script src="{% static 'js/menu.js' %}"></script>
+<script src="{% static 'js/vendor/jquery-2.2.4.min.js' %}"></script>
 
 {% block content %}
 
@@ -16,241 +18,22 @@
         </div>
 
         <ul class="filter-wrap filters col-lg-12 no-padding">
-            <li data-filter=".Breakfast">Завтраки, выпечка</li>
-            <li data-filter=".Monday">Понедельник</li>
-            <li data-filter=".Tuesday">Вторник</li>
-            <li data-filter=".Wednesday">Среда</li>
-            <li data-filter=".Thursday">Четверг</li>
-            <li data-filter=".Friday">Пятница</li>
-            <li data-filter=".Drinks">Напитки</li>
+            <li>Завтраки, выпечка</li>
+            <button class=".js-menu" id="123" value="456">Понедельник</button>
+            <li>Вторник</li>
+            <li>Среда</li>
+            <li>Четверг</li>
+            <li>Пятница</li>
+            <li>Напитки</li>
         </ul>
                     
         <div class="filters-content">
             <div class="row grid">
-                <div class="col-md-6 all Active Breakfast">
-
-                </div>
-                <div class="col-md-6 all Monday">
-                    <<h4>Супы</h4>
-                    {% for food in Monday %}
-                    {% if food.category_id == 7 %}
-                    <div class="single-menu">
-                        <div class="title-wrap d-flex justify-content-between">
-                            <h4>{{food.name}}, {{food.weight}}{{food.unit}}</h4><h4 class="price">{{food.price}}р.</h4>
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                    <h4>Горячие блюда</h4>
-                    {% for food in Monday %}
-                    {% if food.category_id == 8 %}
-                    <div class="single-menu">
-                        <div class="title-wrap d-flex justify-content-between">
-                            <h4>{{food.name}}, {{food.weight}}{{food.unit}}</h4><h4 class="price">{{food.price}}р.</h4>
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                    <h4>Гарниры</h4>
-                    {% for food in Monday %}
-                    {% if food.category_id == 9 %}
-                    <div class="single-menu">
-                        <div class="title-wrap d-flex justify-content-between">
-                            <h4>{{food.name}}, {{food.weight}}{{food.unit}}</h4><h4 class="price">{{food.price}}р.</h4>
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                    <h4>Салаты</h4>
-                    {% for food in Monday %}
-                    {% if food.category_id == 10 %}
-                    <div class="single-menu">
-                        <div class="title-wrap d-flex justify-content-between">
-                            <h4>{{food.name}}, {{food.weight}}{{food.unit}}</h4><h4 class="price">{{food.price}}р.</h4>
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                </div>
-                <div class="col-md-6 all Tuesday">
-                    <h4>Супы</h4>
-                    {% for food in Tuesday %}
-                    {% if food.category_id == 7 %}
-                    <div class="single-menu">
-                        <div class="title-wrap d-flex justify-content-between">
-                            <h4>{{food.name}}, {{food.weight}}{{food.unit}}</h4><h4 class="price">{{food.price}}р.</h4>
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                    <h4>Горячие блюда</h4>
-                    {% for food in Tuesday %}
-                    {% if food.category_id == 8 %}
-                    <div class="single-menu">
-                        <div class="title-wrap d-flex justify-content-between">
-                            <h4>{{food.name}}, {{food.weight}}{{food.unit}}</h4><h4 class="price">{{food.price}}р.</h4>
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                    <h4>Гарниры</h4>
-                    {% for food in Tuesday %}
-                    {% if food.category_id == 9 %}
-                    <div class="single-menu">
-                        <div class="title-wrap d-flex justify-content-between">
-                            <h4>{{food.name}}, {{food.weight}}{{food.unit}}</h4><h4 class="price">{{food.price}}р.</h4>
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                    <h4>Салаты</h4>
-                    {% for food in Tuesday %}
-                    {% if food.category_id == 10 %}
-                    <div class="single-menu">
-                        <div class="title-wrap d-flex justify-content-between">
-                            <h4>{{food.name}}, {{food.weight}}{{food.unit}}</h4><h4 class="price">{{food.price}}р.</h4>
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                </div>
-                <div class="col-md-6 all Wednesday">
-                    <<h4>Супы</h4>
-                    {% for food in Wednesday %}
-                    {% if food.category_id == 7 %}
-                    <div class="single-menu">
-                        <div class="title-wrap d-flex justify-content-between">
-                            <h4>{{food.name}}, {{food.weight}}{{food.unit}}</h4><h4 class="price">{{food.price}}р.</h4>
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                    <h4>Горячие блюда</h4>
-                    {% for food in Wednesday %}
-                    {% if food.category_id == 8 %}
-                    <div class="single-menu">
-                        <div class="title-wrap d-flex justify-content-between">
-                            <h4>{{food.name}}, {{food.weight}}{{food.unit}}</h4><h4 class="price">{{food.price}}р.</h4>
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                    <h4>Гарниры</h4>
-                    {% for food in Wednesday %}
-                    {% if food.category_id == 9 %}
-                    <div class="single-menu">
-                        <div class="title-wrap d-flex justify-content-between">
-                            <h4>{{food.name}}, {{food.weight}}{{food.unit}}</h4><h4 class="price">{{food.price}}р.</h4>
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                    <h4>Салаты</h4>
-                    {% for food in Wednesday %}
-                    {% if food.category_id == 10 %}
-                    <div class="single-menu">
-                        <div class="title-wrap d-flex justify-content-between">
-                            <h4>{{food.name}}, {{food.weight}}{{food.unit}}</h4><h4 class="price">{{food.price}}р.</h4>
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                </div>
-                <div class="col-md-6 all Thursday">
-                    <<h4>Супы</h4>
-                    {% for food in Thursday %}
-                    {% if food.category_id == 7 %}
-                    <div class="single-menu">
-                        <div class="title-wrap d-flex justify-content-between">
-                            <h4>{{food.name}}, {{food.weight}}{{food.unit}}</h4><h4 class="price">{{food.price}}р.</h4>
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                    <h4>Горячие блюда</h4>
-                    {% for food in Thursday %}
-                    {% if food.category_id == 8 %}
-                    <div class="single-menu">
-                        <div class="title-wrap d-flex justify-content-between">
-                            <h4>{{food.name}}, {{food.weight}}{{food.unit}}</h4><h4 class="price">{{food.price}}р.</h4>
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                    <h4>Гарниры</h4>
-                    {% for food in Thursday %}
-                    {% if food.category_id == 9 %}
-                    <div class="single-menu">
-                        <div class="title-wrap d-flex justify-content-between">
-                            <h4>{{food.name}}, {{food.weight}}{{food.unit}}</h4><h4 class="price">{{food.price}}р.</h4>
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                    <h4>Салаты</h4>
-                    {% for food in Thursday %}
-                    {% if food.category_id == 10 %}
-                    <div class="single-menu">
-                        <div class="title-wrap d-flex justify-content-between">
-                            <h4>{{food.name}}, {{food.weight}}{{food.unit}}</h4><h4 class="price">{{food.price}}р.</h4>
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                </div>
-                <div class="col-md-6 all Friday">
-                    <<h4>Супы</h4>
-                    {% for food in Friday %}
-                    {% if food.category_id == 7 %}
-                    <div class="single-menu">
-                        <div class="title-wrap d-flex justify-content-between">
-                            <h4>{{food.name}}, {{food.weight}}{{food.unit}}</h4><h4 class="price">{{food.price}}р.</h4>
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                    <h4>Горячие блюда</h4>
-                    {% for food in Friday %}
-                    {% if food.category_id == 8 %}
-                    <div class="single-menu">
-                        <div class="title-wrap d-flex justify-content-between">
-                            <h4>{{food.name}}, {{food.weight}}{{food.unit}}</h4><h4 class="price">{{food.price}}р.</h4>
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                    <h4>Гарниры</h4>
-                    {% for food in Friday %}
-                    {% if food.category_id == 9 %}
-                    <div class="single-menu">
-                        <div class="title-wrap d-flex justify-content-between">
-                            <h4>{{food.name}}, {{food.weight}}{{food.unit}}</h4><h4 class="price">{{food.price}}р.</h4>
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                    <h4>Салаты</h4>
-                    {% for food in Friday %}
-                    {% if food.category_id == 10 %}
-                    <div class="single-menu">
-                        <div class="title-wrap d-flex justify-content-between">
-                            <h4>{{food.name}}, {{food.weight}}{{food.unit}}</h4><h4 class="price">{{food.price}}р.</h4>
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                </div>
-                <div class="col-md-6 all Drinks">
-                    <div class="single-menu">
-                        <div class="title-wrap d-flex justify-content-between">
-                            <h4>Ristretto</h4>
-                            <h4 class="price">$49</h4>
-                        </div>
-                        <p>
-                            Usage of the Internet is becoming more common due to rapid advance.
-                        </p>
-                    </div>
-                </div>
+                {% if Monday %}
+                {% for food in Monday %}
+                {{food.name}}
+                {% endfor%}
+                {% endif %}
             </div>
         </div>
                     

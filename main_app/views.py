@@ -1,21 +1,30 @@
 from django.shortcuts import render
 from django.views import View
+from django.views.generic import TemplateView
+
 from .models import Food, Category, Weeks, Days
 from cart.forms import CartAddProductForm
 
-
-color = ('994848', '48994b', '7f4899', '486e99', 'a63223', '9ba623', '23a66f', '948e8f', )
+color = ('994848', '48994b', '7f4899', '486e99', 'a63223', '9ba623', '23a66f', '948e8f',)
 check = 'True'
 
-class MainPage(View):
 
-    def get(self, request):
+class MainPage(TemplateView):
+    template_name = 'main/mainpage.html'
+
+    # def get(self, request):
+    #     week = Weeks.objects.get(id=1)
+    #     return render(request, 'main/mainpage.html')
+
+    def get_context_data(self, **kwargs):
+        context = super(MainPage, self).get_context_data(**kwargs)
         week = Weeks.objects.get(id=1)
-        return render(request, 'main/mainpage.html', {'Monday': week.days.get(day='Понедельник').food.all(),
-                                                      'Tuesday': week.days.get(day='Вторник').food.all(),
-                                                      'Wednesday': week.days.get(day='Среда').food.all(),
-                                                      'Thursday': week.days.get(day='Четверг').food.all(),
-                                                      'Friday': week.days.get(day='Пятница').food.all()})
+        context['Monday'] = week.days.get(day='Понедельник').food.all()
+        context['Tuesday'] = week.days.get(day='Вторник').food.all()
+        context['Wednesday'] = week.days.get(day='Среда').food.all()
+        context['Thursday'] = week.days.get(day='Четверг').food.all()
+        context['Friday'] = week.days.get(day='Пятница').food.all()
+        return context
 
 
 class Menu(View):
