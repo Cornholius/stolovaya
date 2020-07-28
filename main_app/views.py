@@ -10,15 +10,12 @@ check = 'True'
 class MainPage(View):
 
     def get(self, request):
-        week = Weeks.objects.filter(id=1)
-        for day in week:
-            for item in day.days.filter(day='Понедельник'):
-                soup = item.food.filter(category_id=7)
-                salad = item.food.filter(category_id=10)
-                print(soup)
-                print(salad)
-        cart_form = CartAddProductForm
-        return render(request, 'main/mainpage.html', {'soup': soup, 'salad': salad, 'cart_product_form': cart_form})
+        week = Weeks.objects.get(id=1)
+        return render(request, 'main/mainpage.html', {'Monday': week.days.get(day='Понедельник').food.all(),
+                                                      'Tuesday': week.days.get(day='Вторник').food.all(),
+                                                      'Wednesday': week.days.get(day='Среда').food.all(),
+                                                      'Thursday': week.days.get(day='Четверг').food.all(),
+                                                      'Friday': week.days.get(day='Пятница').food.all()})
 
 
 class Menu(View):

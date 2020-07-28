@@ -52,6 +52,7 @@ class Days(models.Model):
 class Weeks(models.Model):
     week_number = models.IntegerField(default=0)
     days = models.ManyToManyField(Days, verbose_name='тест3', related_name='test4', blank=True)
+    food = models.ManyToManyField(Food, verbose_name='тест5', related_name='test6', blank=True)
 
     def __str__(self):
         return str(self.week_number)
