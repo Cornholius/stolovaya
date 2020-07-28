@@ -1,3 +1,4 @@
+from django.http import JsonResponse
 from django.shortcuts import render
 from django.views import View
 from django.views.generic import TemplateView
@@ -12,9 +13,10 @@ check = 'True'
 class MainPage(TemplateView):
     template_name = 'main/mainpage.html'
 
-    # def get(self, request):
-    #     week = Weeks.objects.get(id=1)
-    #     return render(request, 'main/mainpage.html')
+    def get(self, request):
+        week = Weeks.objects.get(id=1)
+        return render(request, 'main/mainpage.html', {'Monday': week.days.get(day='Понедельник').food.all(),
+                                                      'Tuesday': week.days.get(day='Вторник').food.all()})
 
     def get_context_data(self, **kwargs):
         context = super(MainPage, self).get_context_data(**kwargs)

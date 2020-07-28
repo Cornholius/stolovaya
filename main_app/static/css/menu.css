@@ -1,0 +1,9 @@
+.menu {
+	flex-direction: row;
+}
+
+.menu-text {
+    color: #3b3b3b;
+    font-size: 16px;
+    font-weight: 600;
+}

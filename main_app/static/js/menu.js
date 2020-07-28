@@ -1,6 +1,5 @@
 $(function () {
   $(".js-menu").click(function () {
-  alert("hhhhhhhhhhhhhhh"),
     const csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
 $.ajaxSetup({
     beforeSend: function(xhr, settings) {
