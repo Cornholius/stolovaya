@@ -5,89 +5,87 @@
 
 <!-- Start menu-area Area -->
 
-<!--<div class="row">-->
-<!--  <div class="col-4">-->
-<!--    <div class="list-group " id="list-tab" role="tablist">-->
-<!--      <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Home</a>-->
-<!--      <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Profile</a>-->
-<!--      <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Messages</a>-->
-<!--      <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--  <div class="col-8">-->
-<!--    <div class="tab-content" id="nav-tabContent">-->
-<!--      <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list"></div>-->
-<!--      <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list"></div>-->
-<!--      <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">3232</div>-->
-<!--      <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">3232</div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
 <section class="menu-area section-gap" id="menu">
-                <div class="container">
-					<div class="row d-flex justify-content-center">
-						<div class="menu-content pb-70 col-lg-8">
-							<div class="title text-center">
-								<h1 class="mb-10">What kind of Foods we serve for you</h1>
-								<p>Who are in extremely love with eco friendly system.</p>
-							</div>
-						</div>
-					</div>
-
-                    <div class="list-group list-group-horizontal menu d-flex justify-content-center">
-                        <a class="list-group-item menu-text" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Ололо</a>
-                        <a class="list-group-item" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Breakfast</a>
-                        <a class="list-group-item" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Dinner</a>
-                    </div>
-
-                    <div class="tab-content">
-                        <div class="tab-pane fade" id="list-home" role="tabpanel" aria-labelledby="list-messages-list">
-                            <h4>Супы</h4>
-                            {% for food in Tuesday %}
-                            {% if food.category_id == 7 %}
-                            <div class="single-menu">
-                                <div class="title-wrap d-flex justify-content-between">
-                                    <h4>{{food.name}}, {{food.weight}}{{food.unit}}</h4><h4 class="price">{{food.price}}р.</h4>
-                                </div>
-                            </div>
-                            {% endif %}
-                            {% endfor %}
-                            <h4>Горячие блюда</h4>
-                            {% for food in Tuesday %}
-                            {% if food.category_id == 8 %}
-                            <div class="single-menu">
-                                <div class="title-wrap d-flex justify-content-between">
-                                    <h4>{{food.name}}, {{food.weight}}{{food.unit}}</h4><h4 class="price">{{food.price}}р.</h4>
-                                </div>
-                            </div>
-                            {% endif %}
-                            {% endfor %}
-                            <h4>Гарниры</h4>
-                            {% for food in Tuesday %}
-                            {% if food.category_id == 9 %}
-                            <div class="single-menu">
-                                <div class="title-wrap d-flex justify-content-between">
-                                    <h4>{{food.name}}, {{food.weight}}{{food.unit}}</h4><h4 class="price">{{food.price}}р.</h4>
-                                </div>
-                            </div>
-                            {% endif %}
-                            {% endfor %}
-                            <h4>Салаты</h4>
-                            {% for food in Tuesday %}
-                            {% if food.category_id == 10 %}
-                            <div class="single-menu">
-                                <div class="title-wrap d-flex justify-content-between">
-                                    <h4>{{food.name}}, {{food.weight}}{{food.unit}}</h4><h4 class="price">{{food.price}}р.</h4>
-                                </div>
-                            </div>
-                            {% endif %}
-                            {% endfor %}
-                        </div>
-                        <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-messages-list">32345452</div>
-                        <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">324564632</div>
-                    </div>
-
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="menu-content pb-20 col-lg-8">
+                <div class="title text-center">
+                    <h1 class="mb-10">What kind of Foods we serve for you</h1>
+                    <p>Who are in extremely love with eco friendly system.</p>
                 </div>
+            </div>
+        </div>
+
+        <div class="menu list-group list-group-horizontal d-flex">
+            <a class="list-group-item menu-text p-6 flex-fill border-left" data-toggle="list" href="#Breakfast" role="tab" aria-controls="home">Завтраки и выпечка</a>
+            <a class="list-group-item menu-text p-6 flex-fill" data-toggle="list" href="#Breakfast" role="tab" aria-controls="home">Понедельник</a>
+            <a class="list-group-item menu-text p-6 flex-fill" data-toggle="list" href="#Breakfast" role="tab" aria-controls="home">Вторник</a>
+            <a class="list-group-item menu-text p-6 flex-fill" data-toggle="list" href="#Breakfast" role="tab" aria-controls="home">Среда</a>
+            <a class="list-group-item menu-text p-6 flex-fill" data-toggle="list" href="#Breakfast" role="tab" aria-controls="home">Четверг</a>
+            <a class="list-group-item menu-text p-6 flex-fill" data-toggle="list" href="#Breakfast" role="tab" aria-controls="home">Пятница</a>
+            <a class="list-group-item menu-text p-6 flex-fill border-right" data-toggle="list" href="#Breakfast" role="tab" aria-controls="home">Напитки</a>
+        </div>
+
+        <div class="tab-content">
+            <div class="tab-pane fade d-flex flex-wrap justify-content-center" id="Breakfast" role="tabpanel" aria-labelledby="list-messages-list">
+                <div class="d-flex justify-content-center"style="min-width: 1000px; padding: 40px"><h3>Супы</h3></div>
+                <div class="break"></div>
+                {% for food in Tuesday %}
+                {% if food.category_id == 7 %}
+                <div class="d-flex flex-wrap">
+                    <div class="single-menu mr-4" style="min-width: 500px">
+                        <div class="title-wrap d-flex justify-content-between">
+                            <h4>{{food.name}}, {{food.weight}}{{food.unit}}</h4><h4 class="price">{{food.price}}р.</h4>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+                <div class="d-flex justify-content-center"style="min-width: 1000px; padding: 40px"><h3>Горячие блюда</h3></div>
+                <div class="break"></div>
+                {% for food in Tuesday %}
+                {% if food.category_id == 8 %}
+                <div class="d-flex flex-wrap">
+                    <div class="single-menu mr-4" style="min-width: 500px">
+                        <div class="title-wrap d-flex justify-content-between">
+                            <h4>{{food.name}}, {{food.weight}}{{food.unit}}</h4><h4 class="price">{{food.price}}р.</h4>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+                <div class="d-flex justify-content-center"style="min-width: 1000px; padding: 40px"><h3>Гарниры</h3></div>
+                <div class="break"></div>
+                {% for food in Tuesday %}
+                {% if food.category_id == 9 %}
+                <div class="d-flex flex-wrap">
+                    <div class="single-menu mr-4" style="min-width: 500px">
+                        <div class="title-wrap d-flex justify-content-between">
+                            <h4>{{food.name}}, {{food.weight}}{{food.unit}}</h4><h4 class="price">{{food.price}}р.</h4>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+                <div class="d-flex justify-content-center"style="min-width: 1000px; padding: 40px"><h3>Салаты</h3></div>
+                <div class="break"></div>
+                {% for food in Tuesday %}
+                {% if food.category_id == 10 %}
+                <div class="d-flex flex-wrap">
+                    <div class="single-menu mr-4" style="min-width: 500px">
+                        <div class="title-wrap d-flex justify-content-between">
+                            <h4>{{food.name}}, {{food.weight}}{{food.unit}}</h4><h4 class="price">{{food.price}}р.</h4>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+            <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-messages-list">32345452</div>
+            <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">324564632</div>
+        </div>
+
+    </div>
 </section>
 <!-- End menu-area Area -->
 {% endblock %}
