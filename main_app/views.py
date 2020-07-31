@@ -15,6 +15,7 @@ class MainPage(TemplateView):
 
     def get(self, request):
         week = Weeks.objects.get(id=1)
+        print(week.days.get(day='Понедельник').food.all())
         return render(request, 'main/mainpage.html', {'Monday': week.days.get(day='Понедельник').food.all(),
                                                       'Tuesday': week.days.get(day='Вторник').food.all()})
 
