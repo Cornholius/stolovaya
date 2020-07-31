@@ -17,7 +17,10 @@ class MainPage(TemplateView):
         week = Weeks.objects.get(id=1)
         print(week.days.get(day='Понедельник').food.all())
         return render(request, 'main/mainpage.html', {'Monday': week.days.get(day='Понедельник').food.all(),
-                                                      'Tuesday': week.days.get(day='Вторник').food.all()})
+                                                      'Tuesday': week.days.get(day='Вторник').food.all(),
+                                                      'Wednesday': week.days.get(day='Среда').food.all(),
+                                                      'Thursday': week.days.get(day='Четверг').food.all(),
+                                                      'Friday': week.days.get(day='Пятница').food.all()})
 
     def get_context_data(self, **kwargs):
         context = super(MainPage, self).get_context_data(**kwargs)
