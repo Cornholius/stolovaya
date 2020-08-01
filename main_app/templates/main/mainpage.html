@@ -1,6 +1,5 @@
 {% extends 'include/base.html' %}
 {% load static %}
-
 {% block content %}
 
 <!-- Start menu-area Area -->
@@ -20,14 +19,33 @@
         </div>
         <div class="col-8">
             <div class="tab-content" id="nav-tabContent">
-                <div class="tab-pane fade show active" id="Breakfast" role="tabpanel" aria-labelledby="Breakfast-list"></div>
+                <div class="tab-pane fade show active" id="Breakfast" role="tabpanel" aria-labelledby="Breakfast-list">
+                    <div class="filters-content">
+                        <div class="col-md-12 d-flex flex-wrap justify-content-around">
+                            {% for i in Breakfast_category %}
+                            <div class="col-12 d-flex justify-content-center mt-5"><h2>{{i.name}}</h2></div>
+                            {% for food in Breakfast %}
+                            {% if food.category_id == i.id %}
+                            <div class="single-menu" style="min-width: 550px;">
+                                <div class="title-wrap d-flex justify-content-between">
+                                    <h4>{{food.name}}</h4>
+                                    <h4 class="price">{{food.price}}р.</h4>
+                                </div>
+                            </div>
+                            {% endif %}
+                            {% endfor %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
                 <div class="tab-pane fade" id="Monday" role="tabpanel" aria-labelledby="Monday-list">
                     <div class="filters-content">
                         <div class="col-md-12 d-flex flex-wrap justify-content-around">
-                            <div class="col-12 d-flex justify-content-center"><h2>Супы</h2></div>
+                            {% for i in Days_category %}
+                            <div class="col-12 d-flex justify-content-center mt-5"><h2>{{i.name}}</h2></div>
                             {% for food in Monday %}
-                            {% if food.category_id == 7 %}
-                            <div class="single-menu" style="min-width: 390px;">
+                            {% if food.category_id == i.id %}
+                            <div class="single-menu" style="min-width: 550px;">
                                 <div class="title-wrap d-flex justify-content-between">
                                     <h4>{{food.name}}</h4>
                                     <h4 class="price">{{food.price}}р.</h4>
@@ -35,38 +53,6 @@
                             </div>
                             {% endif %}
                             {% endfor %}
-                            <div class="col-12 mt-5 d-flex justify-content-center"><h2>Горячие блюда</h2></div>
-                            {% for food in Monday %}
-                            {% if food.category_id == 8 %}
-                            <div class="single-menu" style="min-width: 390px;">
-                                <div class="title-wrap d-flex justify-content-between">
-                                    <h4>{{food.name}}</h4>
-                                    <h4 class="price">{{food.price}}р.</h4>
-                                </div>
-                            </div>
-                            {% endif %}
-                            {% endfor %}
-                            <div class="col-12 mt-5 d-flex justify-content-center"><h2>Гарниры</h2></div>
-                            {% for food in Monday %}
-                            {% if food.category_id == 9 %}
-                            <div class="single-menu" style="min-width: 390px;">
-                                <div class="title-wrap d-flex justify-content-between">
-                                    <h4>{{food.name}}</h4>
-                                    <h4 class="price">{{food.price}}р.</h4>
-                                </div>
-                            </div>
-                            {% endif %}
-                            {% endfor %}
-                            <div class="col-12 mt-5 d-flex justify-content-center"><h2>Салаты</h2></div>
-                            {% for food in Monday %}
-                            {% if food.category_id == 10 %}
-                            <div class="single-menu" style="min-width: 390px;">
-                                <div class="title-wrap d-flex justify-content-between">
-                                    <h4>{{food.name}}</h4>
-                                    <h4 class="price">{{food.price}}р.</h4>
-                                </div>
-                            </div>
-                            {% endif %}
                             {% endfor %}
                         </div>
                     </div>
@@ -74,10 +60,11 @@
                 <div class="tab-pane fade" id="Tuesday" role="tabpanel" aria-labelledby="Tuesday-list">
                     <div class="filters-content">
                         <div class="col-md-12 d-flex flex-wrap justify-content-around">
-                            <div class="col-12 d-flex justify-content-center"><h2>Супы</h2></div>
+                            {% for i in Days_category %}
+                            <div class="col-12 d-flex justify-content-center mt-5"><h2>{{i.name}}</h2></div>
                             {% for food in Tuesday %}
-                            {% if food.category_id == 7 %}
-                            <div class="single-menu" style="min-width: 390px;">
+                            {% if food.category_id == i.id %}
+                            <div class="single-menu" style="min-width: 550px;">
                                 <div class="title-wrap d-flex justify-content-between">
                                     <h4>{{food.name}}</h4>
                                     <h4 class="price">{{food.price}}р.</h4>
@@ -85,38 +72,6 @@
                             </div>
                             {% endif %}
                             {% endfor %}
-                            <div class="col-12 mt-5 d-flex justify-content-center"><h2>Горячие блюда</h2></div>
-                            {% for food in Tuesday %}
-                            {% if food.category_id == 8 %}
-                            <div class="single-menu" style="min-width: 390px;">
-                                <div class="title-wrap d-flex justify-content-between">
-                                    <h4>{{food.name}}</h4>
-                                    <h4 class="price">{{food.price}}р.</h4>
-                                </div>
-                            </div>
-                            {% endif %}
-                            {% endfor %}
-                            <div class="col-12 mt-5 d-flex justify-content-center"><h2>Гарниры</h2></div>
-                            {% for food in Tuesday %}
-                            {% if food.category_id == 9 %}
-                            <div class="single-menu" style="min-width: 390px;">
-                                <div class="title-wrap d-flex justify-content-between">
-                                    <h4>{{food.name}}</h4>
-                                    <h4 class="price">{{food.price}}р.</h4>
-                                </div>
-                            </div>
-                            {% endif %}
-                            {% endfor %}
-                            <div class="col-12 mt-5 d-flex justify-content-center"><h2>Салаты</h2></div>
-                            {% for food in Tuesday %}
-                            {% if food.category_id == 10 %}
-                            <div class="single-menu" style="min-width: 390px;">
-                                <div class="title-wrap d-flex justify-content-between">
-                                    <h4>{{food.name}}</h4>
-                                    <h4 class="price">{{food.price}}р.</h4>
-                                </div>
-                            </div>
-                            {% endif %}
                             {% endfor %}
                         </div>
                     </div>
@@ -124,10 +79,11 @@
                 <div class="tab-pane fade" id="Wednesday" role="tabpanel" aria-labelledby="Wednesday-list">
                     <div class="filters-content">
                         <div class="col-md-12 d-flex flex-wrap justify-content-around">
-                            <div class="col-12 d-flex justify-content-center"><h2>Супы</h2></div>
+                            {% for i in Days_category %}
+                            <div class="col-12 d-flex justify-content-center mt-5"><h2>{{i.name}}</h2></div>
                             {% for food in Wednesday %}
-                            {% if food.category_id == 7 %}
-                            <div class="single-menu" style="min-width: 390px;">
+                            {% if food.category_id == i.id %}
+                            <div class="single-menu" style="min-width: 550px;">
                                 <div class="title-wrap d-flex justify-content-between">
                                     <h4>{{food.name}}</h4>
                                     <h4 class="price">{{food.price}}р.</h4>
@@ -135,38 +91,6 @@
                             </div>
                             {% endif %}
                             {% endfor %}
-                            <div class="col-12 mt-5 d-flex justify-content-center"><h2>Горячие блюда</h2></div>
-                            {% for food in Wednesday %}
-                            {% if food.category_id == 8 %}
-                            <div class="single-menu" style="min-width: 390px;">
-                                <div class="title-wrap d-flex justify-content-between">
-                                    <h4>{{food.name}}</h4>
-                                    <h4 class="price">{{food.price}}р.</h4>
-                                </div>
-                            </div>
-                            {% endif %}
-                            {% endfor %}
-                            <div class="col-12 mt-5 d-flex justify-content-center"><h2>Гарниры</h2></div>
-                            {% for food in Wednesday %}
-                            {% if food.category_id == 9 %}
-                            <div class="single-menu" style="min-width: 390px;">
-                                <div class="title-wrap d-flex justify-content-between">
-                                    <h4>{{food.name}}</h4>
-                                    <h4 class="price">{{food.price}}р.</h4>
-                                </div>
-                            </div>
-                            {% endif %}
-                            {% endfor %}
-                            <div class="col-12 mt-5 d-flex justify-content-center"><h2>Салаты</h2></div>
-                            {% for food in Wednesday %}
-                            {% if food.category_id == 10 %}
-                            <div class="single-menu" style="min-width: 390px;">
-                                <div class="title-wrap d-flex justify-content-between">
-                                    <h4>{{food.name}}</h4>
-                                    <h4 class="price">{{food.price}}р.</h4>
-                                </div>
-                            </div>
-                            {% endif %}
                             {% endfor %}
                         </div>
                     </div>
@@ -174,10 +98,11 @@
                 <div class="tab-pane fade" id="Thursday" role="tabpanel" aria-labelledby="Thursday-list">
                     <div class="filters-content">
                         <div class="col-md-12 d-flex flex-wrap justify-content-around">
-                            <div class="col-12 d-flex justify-content-center"><h2>Супы</h2></div>
+                            {% for i in Days_category %}
+                            <div class="col-12 d-flex justify-content-center mt-5"><h2>{{i.name}}</h2></div>
                             {% for food in Thursday %}
-                            {% if food.category_id == 7 %}
-                            <div class="single-menu" style="min-width: 390px;">
+                            {% if food.category_id == i.id %}
+                            <div class="single-menu" style="min-width: 550px;">
                                 <div class="title-wrap d-flex justify-content-between">
                                     <h4>{{food.name}}</h4>
                                     <h4 class="price">{{food.price}}р.</h4>
@@ -185,38 +110,6 @@
                             </div>
                             {% endif %}
                             {% endfor %}
-                            <div class="col-12 mt-5 d-flex justify-content-center"><h2>Горячие блюда</h2></div>
-                            {% for food in Thursday %}
-                            {% if food.category_id == 8 %}
-                            <div class="single-menu" style="min-width: 390px;">
-                                <div class="title-wrap d-flex justify-content-between">
-                                    <h4>{{food.name}}</h4>
-                                    <h4 class="price">{{food.price}}р.</h4>
-                                </div>
-                            </div>
-                            {% endif %}
-                            {% endfor %}
-                            <div class="col-12 mt-5 d-flex justify-content-center"><h2>Гарниры</h2></div>
-                            {% for food in Thursday %}
-                            {% if food.category_id == 9 %}
-                            <div class="single-menu" style="min-width: 390px;">
-                                <div class="title-wrap d-flex justify-content-between">
-                                    <h4>{{food.name}}</h4>
-                                    <h4 class="price">{{food.price}}р.</h4>
-                                </div>
-                            </div>
-                            {% endif %}
-                            {% endfor %}
-                            <div class="col-12 mt-5 d-flex justify-content-center"><h2>Салаты</h2></div>
-                            {% for food in Thursday %}
-                            {% if food.category_id == 10 %}
-                            <div class="single-menu" style="min-width: 390px;">
-                                <div class="title-wrap d-flex justify-content-between">
-                                    <h4>{{food.name}}</h4>
-                                    <h4 class="price">{{food.price}}р.</h4>
-                                </div>
-                            </div>
-                            {% endif %}
                             {% endfor %}
                         </div>
                     </div>
@@ -224,10 +117,11 @@
                 <div class="tab-pane fade" id="Friday" role="tabpanel" aria-labelledby="Friday-list">
                     <div class="filters-content">
                         <div class="col-md-12 d-flex flex-wrap justify-content-around">
-                            <div class="col-12 d-flex justify-content-center"><h2>Супы</h2></div>
+                            {% for i in Days_category %}
+                            <div class="col-12 d-flex justify-content-center mt-5"><h2>{{i.name}}</h2></div>
                             {% for food in Friday %}
-                            {% if food.category_id == 7 %}
-                            <div class="single-menu" style="min-width: 390px;">
+                            {% if food.category_id == i.id %}
+                            <div class="single-menu" style="min-width: 550px;">
                                 <div class="title-wrap d-flex justify-content-between">
                                     <h4>{{food.name}}</h4>
                                     <h4 class="price">{{food.price}}р.</h4>
@@ -235,38 +129,6 @@
                             </div>
                             {% endif %}
                             {% endfor %}
-                            <div class="col-12 mt-5 d-flex justify-content-center"><h2>Горячие блюда</h2></div>
-                            {% for food in Friday %}
-                            {% if food.category_id == 8 %}
-                            <div class="single-menu" style="min-width: 390px;">
-                                <div class="title-wrap d-flex justify-content-between">
-                                    <h4>{{food.name}}</h4>
-                                    <h4 class="price">{{food.price}}р.</h4>
-                                </div>
-                            </div>
-                            {% endif %}
-                            {% endfor %}
-                            <div class="col-12 mt-5 d-flex justify-content-center"><h2>Гарниры</h2></div>
-                            {% for food in Friday %}
-                            {% if food.category_id == 9 %}
-                            <div class="single-menu" style="min-width: 390px;">
-                                <div class="title-wrap d-flex justify-content-between">
-                                    <h4>{{food.name}}</h4>
-                                    <h4 class="price">{{food.price}}р.</h4>
-                                </div>
-                            </div>
-                            {% endif %}
-                            {% endfor %}
-                            <div class="col-12 mt-5 d-flex justify-content-center"><h2>Салаты</h2></div>
-                            {% for food in Friday %}
-                            {% if food.category_id == 10 %}
-                            <div class="single-menu" style="min-width: 390px;">
-                                <div class="title-wrap d-flex justify-content-between">
-                                    <h4>{{food.name}}</h4>
-                                    <h4 class="price">{{food.price}}р.</h4>
-                                </div>
-                            </div>
-                            {% endif %}
                             {% endfor %}
                         </div>
                     </div>
@@ -277,7 +139,7 @@
                             <div class="col-12 d-flex justify-content-center"><h2>Напитки</h2></div>
                             {% for food in Drinks %}
                             {% if food.category_id == 11 %}
-                            <div class="single-menu" style="min-width: 390px;">
+                            <div class="single-menu" style="min-width: 550px;">
                                 <div class="title-wrap d-flex justify-content-between">
                                     <h4>{{food.name}}</h4>
                                     <h4 class="price">{{food.price}}р.</h4>
@@ -291,33 +153,8 @@
             </div>
         </div>
     </div>
-<!--    <div class="container">-->
-<!--        <div class="row d-flex justify-content-center">-->
-<!--            <div class="menu-content pb-20 col-lg-8">-->
-<!--                <div class="title text-center">-->
-<!--                    <h1 class="mb-10">What kind of Foods we serve for you</h1>-->
-<!--                    <p>Who are in extremely love with eco friendly system.</p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-
-<!--        <div class="menu list-group list-group-horizontal d-flex">-->
-<!--            <a class="list-group-item menu-text p-6 flex-fill border-left" data-toggle="list" href="#Breakfast" role="tab" aria-controls="home">Завтраки и выпечка</a>-->
-<!--            <a class="list-group-item menu-text p-6 flex-fill" data-toggle="list" href="#Monday" role="tab" aria-controls="home">Понедельник</a>-->
-<!--            <a class="list-group-item menu-text p-6 flex-fill" data-toggle="list" href="#Tuesday" role="tab" aria-controls="home">Вторник</a>-->
-<!--            <a class="list-group-item menu-text p-6 flex-fill" data-toggle="list" href="#Wednesday" role="tab" aria-controls="home">Среда</a>-->
-<!--            <a class="list-group-item menu-text p-6 flex-fill" data-toggle="list" href="#Thursday" role="tab" aria-controls="home">Четверг</a>-->
-<!--            <a class="list-group-item menu-text p-6 flex-fill" data-toggle="list" href="#Friday" role="tab" aria-controls="home">Пятница</a>-->
-<!--            <a class="list-group-item menu-text p-6 flex-fill border-right" data-toggle="list" href="#Drinks" role="tab" aria-controls="home">Напитки</a>-->
-<!--        </div>-->
-
-<!--        <div class="tab-content">-->
-<!--            <div class="tab-pane fade d-flex flex-wrap justify-content-center" id="Breakfast" role="tabpanel" aria-labelledby="list-messages-list">1</div>-->
-<!--            <div class="tab-pane fade d-flex flex-wrap justify-content-center" id="Monday" role="tabpanel" aria-labelledby="list-messages-list">2</div>-->
-<!--            <div class="tab-pane fade d-flex flex-wrap justify-content-center" id="Tuesday" role="tabpanel" aria-labelledby="list-messages-list">3</div>-->
-<!--        </div>-->
-
-<!--    </div>-->
 </section>
+
 <!-- End menu-area Area -->
+
 {% endblock %}

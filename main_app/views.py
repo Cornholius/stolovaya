@@ -15,24 +15,18 @@ class MainPage(TemplateView):
 
     def get(self, request):
         week = Weeks.objects.get(id=1)
-        print(week.days.get(day='Завтраки').food.all())
+        breakfast_cat = list(Category.objects.filter(id__in=[12, 13, 14]))
+        breakfast_cat[1], breakfast_cat[2] = breakfast_cat[2] , breakfast_cat[1]
+        days_cat = list(Category.objects.filter(id__in=[7, 8, 9, 10]).order_by('id'))
         return render(request, 'main/mainpage.html', {'Monday': week.days.get(day='Понедельник').food.all(),
                                                       'Tuesday': week.days.get(day='Вторник').food.all(),
                                                       'Wednesday': week.days.get(day='Среда').food.all(),
                                                       'Thursday': week.days.get(day='Четверг').food.all(),
                                                       'Friday': week.days.get(day='Пятница').food.all(),
                                                       'Breakfast': week.days.get(day='Завтраки').food.all(),
-                                                      'Drinks': week.days.get(day='Напитки').food.all()})
-
-    def get_context_data(self, **kwargs):
-        context = super(MainPage, self).get_context_data(**kwargs)
-        week = Weeks.objects.get(id=1)
-        context['Monday'] = week.days.get(day='Понедельник').food.all()
-        context['Tuesday'] = week.days.get(day='Вторник').food.all()
-        context['Wednesday'] = week.days.get(day='Среда').food.all()
-        context['Thursday'] = week.days.get(day='Четверг').food.all()
-        context['Friday'] = week.days.get(day='Пятница').food.all()
-        return context
+                                                      'Drinks': week.days.get(day='Напитки').food.all(),
+                                                      'Breakfast_category': breakfast_cat,
+                                                      'Days_category': days_cat})
 
 
 class Menu(View):
