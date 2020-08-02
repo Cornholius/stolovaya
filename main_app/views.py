@@ -15,9 +15,11 @@ class MainPage(TemplateView):
 
     def get(self, request):
         week = Weeks.objects.get(id=1)
-        breakfast_cat = list(Category.objects.filter(id__in=[12, 13, 14]))
-        breakfast_cat[1], breakfast_cat[2] = breakfast_cat[2] , breakfast_cat[1]
+        breakfast_cat = list(Category.objects.filter(id__in=[13, 14, 12]))
+        print(breakfast_cat)
+        breakfast_cat[0], breakfast_cat[1], breakfast_cat[2] = breakfast_cat[1], breakfast_cat[2], breakfast_cat[0]
         days_cat = list(Category.objects.filter(id__in=[7, 8, 9, 10]).order_by('id'))
+        print(breakfast_cat)
         return render(request, 'main/mainpage.html', {'Monday': week.days.get(day='Понедельник').food.all(),
                                                       'Tuesday': week.days.get(day='Вторник').food.all(),
                                                       'Wednesday': week.days.get(day='Среда').food.all(),
