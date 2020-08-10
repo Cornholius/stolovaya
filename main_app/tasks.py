@@ -4,17 +4,13 @@ from .models import Feedback
 
 
 @task
-def order_created(order_id):
-    print('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+def feedback_created(order_id):
     """
     Задача для отправки уведомления по электронной почте при успешном создании заказа.
     """
     order = Feedback.objects.get(id=order_id)
-    subject = 'Ваш заказ на сайте <...> успешно оформлен'
-    message = 'Здравствуй {},\n' \
-              'Тебе хватило мозгов оформить заказ, поздравляю!\n' \
-              'Твой заказ под номером {} ждёт тебя.\n ' \
-              'Приди и забери свой хавчик.'
+    subject = '31231231'
+    message = '312312'
 
     mail_sent = send_mail(subject,
                           message,

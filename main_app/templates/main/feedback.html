@@ -3,7 +3,6 @@
 {% block content %}
 
 
-<!-- Start contact-page Area -->
 <section class="contact-page-area section-gap">
     <div class="container">
         <div class="row">
@@ -40,7 +39,6 @@
                 <form class="form-area contact-form text-right" id="FeedbackForm" method="post">{% csrf_token %}
                     <div class="row">
                         <div class="col-lg-6 d-flex flex-column justify-content-between">
-
                             <input style="height:50px" name="name" placeholder="Ваше имя" onfocus="this.placeholder = ''"
                                    onblur="this.placeholder = 'Enter your name'" class="common-input mb-20 form-control"
                                    required="" type="text">
@@ -69,7 +67,6 @@
         </div>
     </div>
 </section>
-<!-- End contact-page Area -->
 
 
 {% endblock %}

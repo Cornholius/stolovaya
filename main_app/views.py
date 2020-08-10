@@ -5,7 +5,7 @@ from django.views.generic import TemplateView
 from .forms import FeedbackForm
 from .models import Food, Category, Weeks, Feedback
 from cart.forms import CartAddProductForm
-from .tasks import order_created
+from .tasks import feedback_created
 
 color = ('994848', '48994b', '7f4899', '486e99', 'a63223', '9ba623', '23a66f', '948e8f',)
 check = 'True'
@@ -58,9 +58,7 @@ class Feedback(View):
     def post(self, request):
         feedback = FeedbackForm(request.POST)
         if feedback.is_valid():
-            feedback.save()
-            print(feedback)
-            # qwe = Feedback.objects.filter
-        # order_created.delay(order.id)
-
+            post = feedback.save()
+            print(post.id)
+        feedback_created.delay(post.id)
         return render(request, 'main/feedback.html')
