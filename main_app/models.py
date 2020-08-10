@@ -21,15 +21,12 @@ class Food(models.Model):
                  ('гр.', 'гр.'),
                  ('шт.', 'шт.')]
 
-    category = models.ForeignKey(Category, related_name='products',on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     description = models.CharField(max_length=200, blank=True, null=True)
     weight = models.IntegerField(default=0)
     price = models.IntegerField(default=0)
     unit = models.CharField(max_length=20, choices=unit_type, default='')
-    # week = models.CharField(max_length=20, choices=week, default='0')
-    # day = models.CharField(max_length=20, choices=days, default='0')
-
 
     class Meta:
         ordering = ('name',)
@@ -56,3 +53,18 @@ class Weeks(models.Model):
 
     def __str__(self):
         return str(self.week_number)
+
+
+class Feedback(models.Model):
+    name = models.CharField(max_length=50)
+    email = models.EmailField(max_length=254)
+    subject = models.CharField(max_length=100)
+    message = models.CharField(max_length=1000)
+
+    class Meta:
+        ordering = ('subject',)
+        verbose_name = 'Отзыв'
+        verbose_name_plural = 'Отзывы'
+
+    def __str__(self):
+        return 'Order {}'.format(self.id)
