@@ -34,3 +34,7 @@
 @media (max-width: 840px) {
   .invisible-mobile { display: none !important;}
 }
+
+@media (max-width: 840px) {
+  .mobile-menu { width: 300px !important;
+}
