@@ -26,11 +26,16 @@
                             <div class="col-12 d-flex justify-content-center mt-3"><h2>{{i.name}}</h2></div>
                             {% for food in Breakfast %}
                             {% if food.category_id == i.id %}
-                            <div class="single-menu" style="min-width: 550px;">
+                            <div class="single-menu" style="min-width: 500px;">
                                 <div class="title-wrap d-flex justify-content-between">
                                     <h4>{{food.name}}</h4>
                                     <h4 class="price">{{food.price}}р.</h4>
                                 </div>
+                                {%if food.description%}
+                                <div class="text">
+                                    <p>{{food.description}}</p>
+                                </div>
+                                {%endif%}
                             </div>
                             {% endif %}
                             {% endfor %}

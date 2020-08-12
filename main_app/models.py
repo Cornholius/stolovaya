@@ -23,7 +23,7 @@ class Food(models.Model):
 
     category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
-    description = models.CharField(max_length=200, blank=True, null=True)
+    description = models.CharField(max_length=200, blank=True)
     weight = models.IntegerField(default=0)
     price = models.IntegerField(default=0)
     unit = models.CharField(max_length=20, choices=unit_type, default='')
