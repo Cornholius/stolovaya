@@ -16,12 +16,8 @@ class MainPage(TemplateView):
     def get(self, request):
         week = Weeks.objects.get(id=1)
         breakfast_cat = list(Category.objects.filter(id__in=[13, 12]))
-        print(breakfast_cat)
         breakfast_cat[0], breakfast_cat[1] = breakfast_cat[1], breakfast_cat[0]
         days_cat = list(Category.objects.filter(id__in=[7, 8, 9, 10]).order_by('id'))
-        print(breakfast_cat)
-        qwe = Food.objects.get(id=81).description
-        print('!!!!!!!!!!!!!!!!!!!', qwe)
         return render(request, 'main/mainpage.html', {'Monday': week.days.get(day='Понедельник').food.all(),
                                                       'Tuesday': week.days.get(day='Вторник').food.all(),
                                                       'Wednesday': week.days.get(day='Среда').food.all(),
@@ -30,7 +26,6 @@ class MainPage(TemplateView):
                                                       'Breakfast': week.days.get(day='Завтраки').food.all(),
                                                       'Drinks': week.days.get(day='Напитки').food.all(),
                                                       'Breakfast_category': breakfast_cat,
-                                                      'qwe': qwe,
                                                       'Days_category': days_cat})
 
 
@@ -62,6 +57,5 @@ class Feedback(View):
         feedback = FeedbackForm(request.POST)
         if feedback.is_valid():
             post = feedback.save()
-            print(post.id)
         feedback_created.delay(post.id)
         return render(request, 'main/feedback.html')

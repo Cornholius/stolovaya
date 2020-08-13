@@ -19,22 +19,65 @@
 .border-left {
     border-top-left-radius: 15px !important;
     border-bottom-left-radius: 15px !important;
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
 }
 
 .border-right {
     border-top-right-radius: 15px !important;
     border-bottom-right-radius: 15px !important;
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+
+}
+
+.border-all {
+    border-top-right-radius: 15px !important;
+    border-bottom-right-radius: 15px !important;
+    border-top-left-radius: 15px !important;
+    border-bottom-left-radius: 15px !important;
+
 }
 
 
 @media (min-width: 840px) {
-  .invisible-pc { display: none !important;}
+  .invisible-on-pc { display: none !important;}
 }
 
 @media (max-width: 840px) {
-  .invisible-mobile { display: none !important;}
+  .invisible-on-mobile { display: none !important;}
 }
 
 @media (max-width: 840px) {
-  .mobile-menu { width: 300px !important;
+  .mobile-menu {
+    width: 100% !important;
+}
+
+@media (max-width: 840px) {
+  .mobile-view {
+    display: flex-fill;
+    flex-direction: column;
+    line-height: 1.0em;
+    border-top-right-radius: 15px !important;
+    border-bottom-right-radius: 15px !important;
+    border-top-left-radius: 15px !important;
+    border-bottom-left-radius: 15px !important;
+    }
+}
+@media (max-width: 840px) {
+  .border-left {
+    border-top-right-radius: 15px !important;
+    border-bottom-right-radius: 0px !important;
+    border-top-left-radius: 15px !important;
+    border-bottom-left-radius: 0px !important;
+    }
+}
+
+@media (max-width: 840px) {
+  .border-right {
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 15px !important;
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 15px !important;
+    }
 }
