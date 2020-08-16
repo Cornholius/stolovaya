@@ -14,6 +14,8 @@
     <meta name="keywords" content="">
     <!-- meta character set -->
     <meta charset="UTF-8">
+    <!-- Meta csrf token -->
+    <meta name="csrf-token" content="{% csrf_token %}">
     <!-- Site Title -->
     <title>Sky lunch</title>
 
@@ -32,7 +34,6 @@
     <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <link rel="stylesheet" href="{% static 'css/menu.css' %}">
-    <link rel="stylesheet" href="{% static 'css/menu-text.css' %}">
 </head>
 <body>
 
@@ -41,14 +42,43 @@
 <section class="banner-area p-4 d-flex align-items-center invisible-on-mobile" style="height: 280px">
     <div class="d-flex p-4 border-all shadow" style="height: 170px; width: 500px; background: #fff;">
         <div class="col-12">
-        <h1 class="mb-1">Кафе Sky lunch</h1>
-        <h3 class="mb-2">Режим работы: пн-пт 9:30 до 17:30</h3>
-            <a href="../feedback" class="btn btn-success btn-lg btn-block" style="background: #75bb20;">Оставить отзыв</a>
+            <h1 class="mb-1">Кафе Sky lunch</h1>
+            <h3 class="mb-2">Режим работы: пн-пт 9:30 до 17:30</h3>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Feedback_modal" style="background: #75bb00">
+                Оставить отзыв
+            </button>
+        </div>
+    </div>
+
+<!-- End banner Area -->
+
+<!-- start feedback modal -->
+
+    <div class="modal fade" id="Feedback_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form class="form-area contact-form text-right" id="FeedbackForm">{% csrf_token %}
+                        <div class="row">
+                            <div class="col-lg-12 d-flex flex-column justify-content-between">
+                                <input class="common-input mb-20 form-control" name="name" placeholder="Ваше имя" style="height:50px">
+                                <input  class="common-input mb-20 form-control" name="email" placeholder="Ваш Email" style="height:50px" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$">
+                                <input class="common-input mb-20 form-control" name="subject" placeholder="Тема письма" style="height:50px">
+                                <textarea class="common-textarea form-control" name="message" placeholder="Ваш отзыв" style="height: 150px"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                    <button class="btn btn-success" type="submit" id="feedback" style="float: right; background: #75bb20;">Отправить отзыв</button>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- End banner Area -->
+<!-- end feedback modal -->
 
 {% block content %}
 {% endblock %}
@@ -68,6 +98,6 @@
 <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
 <script src="{% static 'js/mail-script.js' %}"></script>
 <script src="{% static 'js/main.js' %}"></script>
-<script src="{% static 'js/menu.js' %}"></script>
+<script src="{% static 'js/feedback.js' %}"></script>
 </body>
 </html>
