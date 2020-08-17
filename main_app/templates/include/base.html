@@ -14,8 +14,6 @@
     <meta name="keywords" content="">
     <!-- meta character set -->
     <meta charset="UTF-8">
-    <!-- Meta csrf token -->
-    <meta name="csrf-token" content="{% csrf_token %}">
     <!-- Site Title -->
     <title>Sky lunch</title>
 
@@ -39,14 +37,17 @@
 
 <!-- start banner Area -->
 
-<section class="banner-area p-4 d-flex align-items-center invisible-on-mobile" style="height: 280px">
-    <div class="d-flex p-4 border-all shadow" style="height: 170px; width: 500px; background: #fff;">
+<section class="banner-area p-4 d-flex align-items-center" style="height: 280px">
+    <div class="title d-flex p-4 border-all shadow" style="width: 30%; background: #fff;">
         <div class="col-12">
             <h1 class="mb-1">Кафе Sky lunch</h1>
             <h3 class="mb-2">Режим работы: пн-пт 9:30 до 17:30</h3>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Feedback_modal" style="background: #75bb00">
-                Оставить отзыв
+                Отзыв 1
             </button>
+            <a href="../feedback" type="button" class="btn btn-primary" style="background: #75bb00">
+                Отзыв 2
+            </a>
         </div>
     </div>
 
