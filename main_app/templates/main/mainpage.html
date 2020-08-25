@@ -9,42 +9,19 @@
         <div class="row d-flex justify-content-center">
             <div class="col-12 ">
                 <div class="list-group menu mobile-view d-flex" id="list-tab" role="tablist">
-                    <a class="list-group-item list-group-item-action active menu-text p-6 flex-fill border-left" id="Breakfast-list" data-toggle="list" href="#Breakfast" role="tab" aria-controls="Breakfast">Завтраки</a>
-                    <a class="list-group-item list-group-item-action menu-text p-6 flex-fill" id="Monday-list" data-toggle="list" href="#Monday" role="tab" aria-controls="Monday">Понедельник</a>
+                    <a class="list-group-item list-group-item-action active menu-text p-6 flex-fill border-left" id="Monday-list" data-toggle="list" href="#Monday" role="tab" aria-controls="Monday">Понедельник</a>
                     <a class="list-group-item list-group-item-action menu-text p-6 flex-fill" id="Tuesday-list" data-toggle="list" href="#Tuesday" role="tab" aria-controls="Tuesday">Вторник</a>
                     <a class="list-group-item list-group-item-action menu-text p-6 flex-fill" id="Wednesday-list" data-toggle="list" href="#Wednesday" role="tab" aria-controls="Wednesday">Среда</a>
                     <a class="list-group-item list-group-item-action menu-text p-6 flex-fill" id="Thursday-list" data-toggle="list" href="#Thursday" role="tab" aria-controls="Thursday">Четверг</a>
                     <a class="list-group-item list-group-item-action menu-text p-6 flex-fill" id="Friday-list" data-toggle="list" href="#Friday" role="tab" aria-controls="Friday">Пятница</a>
+                    <a class="list-group-item list-group-item-action menu-text p-6 flex-fill" id="Breakfast-list" data-toggle="list" href="#Breakfast" role="tab" aria-controls="Breakfast">Завтраки</a>
+                    <a class="list-group-item list-group-item-action menu-text p-6 flex-fill" id="Bakery-list" data-toggle="list" href="#Bakery" role="tab" aria-controls="Bakery">Выпечка</a>
                     <a class="list-group-item list-group-item-action menu-text p-6 flex-fill border-right" id="Drinks-list" data-toggle="list" href="#Drinks" role="tab" aria-controls="Drinks">Напитки</a>
                 </div>
             </div>
             <div class="col-12">
                 <div class="tab-content" id="nav-tabContent">
-                    <div class="tab-pane fade show active" id="Breakfast" role="tabpanel" aria-labelledby="Breakfast-list">
-                        <div class="filters-content">
-                            <div class="col-12 d-flex flex-wrap justify-content-around">
-                                {% for i in Breakfast_category %}
-                                <div class="col-12 d-flex justify-content-center mt-3"><h2>{{i.name}}</h2></div>
-                                {% for food in Breakfast %}
-                                {% if food.category_id == i.id %}
-                                <div class="single-menu flex-wrap mobile-menu mr-3 ml-3" style="width: 40%;">
-                                    <div class="title-wrap d-flex justify-content-between">
-                                        <h4>{{food.name}}</h4>
-                                        <h4 class="price">{{food.price}}р.</h4>
-                                    </div>
-                                    {%if food.description%}
-                                    <div class="text">
-                                        <p>{{food.description}}</p>
-                                    </div>
-                                    {%endif%}
-                                </div>
-                                {% endif %}
-                                {% endfor %}
-                                {% endfor %}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="Monday" role="tabpanel" aria-labelledby="Monday-list">
+                    <div class="tab-pane fade show active" id="Monday" role="tabpanel" aria-labelledby="Monday-list">
                         <div class="filters-content">
                             <div class="col-12 d-flex flex-wrap justify-content-around">
                                 {% for i in Days_category %}
@@ -160,6 +137,46 @@
                                 </div>
                                 {% endif %}
                                 {% endfor %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="Breakfast" role="tabpanel" aria-labelledby="Breakfast-list">
+                        <div class="filters-content">
+                            <div class="col-12 d-flex flex-wrap justify-content-around">
+                                <div class="col-12 d-flex justify-content-center mt-3"><h2>Завтраки</h2></div>
+                                {% for food in Breakfast %}
+                                <div class="single-menu flex-wrap mobile-menu mr-3 ml-3" style="width: 40%; max-width: 500px">
+                                    <div class="title-wrap d-flex justify-content-between">
+                                        <h4>{{food.name}}</h4>
+                                        <h4 class="price">{{food.price}}р.</h4>
+                                    </div>
+                                    {%if food.description%}
+                                    <div class="text">
+                                        <p>{{food.description}}</p>
+                                    </div>
+                                    {%endif%}
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="Bakery" role="tabpanel" aria-labelledby="Bakery-list">
+                        <div class="filters-content">
+                            <div class="col-12 d-flex flex-wrap justify-content-around">
+                                <div class="col-12 d-flex justify-content-center mt-3"><h2>Выпечка</h2></div>
+                                {% for food in Bakery %}
+                                <div class="single-menu flex-wrap mobile-menu mr-3 ml-3" style="width: 40%; max-width: 500px">
+                                    <div class="title-wrap d-flex justify-content-between">
+                                        <h4>{{food.name}}</h4>
+                                        <h4 class="price">{{food.price}}р.</h4>
+                                    </div>
+                                    {%if food.description%}
+                                    <div class="text">
+                                        <p>{{food.description}}</p>
+                                    </div>
+                                    {%endif%}
+                                </div>
                                 {% endfor %}
                             </div>
                         </div>
