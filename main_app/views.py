@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.views import View
 from .forms import FeedbackForm
 from .models import Food, Category, Weeks
+from .models import Feedback as Fb
 from cart.forms import CartAddProductForm
 from .tasks import feedback_created
 import datetime
@@ -12,6 +13,11 @@ import os
 class MainPage(View):
 
     def get(self, request):
+        order = Fb.objects.get(id=62)
+        print(order.name, order.email, order.created_date, order.message)
+
+
+
         week = Weeks.objects.get(id=1)
         days_cat = list(Category.objects.filter(id__in=[7, 8, 9, 10, 15]).order_by('id'))
         days_cat.insert(0, days_cat.pop(4)), days_cat.insert(1, days_cat.pop(4))
@@ -73,5 +79,5 @@ class Feedback(View):
         feedback = FeedbackForm(request.POST)
         if feedback.is_valid():
             post = feedback.save()
-        feedback_created.delay(post.id)
+            feedback_created.delay(post.id)
         return HttpResponse('')

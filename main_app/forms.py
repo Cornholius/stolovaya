@@ -16,7 +16,7 @@ class FeedbackForm(forms.ModelForm):
 
     class Meta:
         model = Feedback
-        fields = ('name', 'email', 'subject', 'message')
+        fields = ('name', 'email', 'message')
 
     def __init__(self, *args, **kwargs):
         super(FeedbackForm, self).__init__(*args, **kwargs)

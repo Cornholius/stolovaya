@@ -1,0 +1,14 @@
+select[multiple] {
+    height: auto;
+    min-height: 600px !important;
+    width: 400px
+}
+
+
+.aligned label {
+    display: block;
+    padding: 4px 10px 0 0;
+    float: left;
+    width: 300px !important;
+    word-wrap: break-word;
+    line-height: 1;

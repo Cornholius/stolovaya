@@ -4,7 +4,6 @@ $(document).ready(function(){
              data = {
                 'name': $("input[name='name']").val(),
                 'email': $("input[name='email']").val(),
-                'subject': $("input[name='subject']").val(),
                 'message': $("textarea[name='message']").val(),
                 'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val()
             };
@@ -12,6 +11,5 @@ $(document).ready(function(){
 //            console.log($('#FeedbackForm')[0]);
             $('#FeedbackForm')[0].reset();
             alert('Ваш отзыв отправлен!');
-            $.modal.close();
             });
 });

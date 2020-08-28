@@ -202,7 +202,7 @@ input[type="submit"], button {
 
     .form-row select[multiple] {
         height: auto;
-        min-height: 0;
+        min-height: 600px !important;
     }
 
     fieldset .fieldBox {
