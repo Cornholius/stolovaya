@@ -1,7 +1,6 @@
 select[multiple] {
     height: auto;
     min-height: 600px !important;
-    width: 400px
 }
 
 
@@ -9,6 +8,7 @@ select[multiple] {
     display: block;
     padding: 4px 10px 0 0;
     float: left;
-    width: 300px !important;
+    width: 23% !important;
     word-wrap: break-word;
     line-height: 1;
+    font-size:20px !important;

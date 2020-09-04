@@ -39,12 +39,16 @@ class Food(models.Model):
 
 
 class Days(models.Model):
-    text = """
-    Здесь выбираем состав меню, который будет отображаться при нажатие на кнопку с этим названием. Для того, 
-    чтобы выбрать несколько позиций зажимаеь Ctrl и кликаем на нужные позиции."""
+    text_menu = """
+    Здесь выбираем СОСТАВ МЕНЮ на выбранный день недели, который будет отображаться при нажатие на кнопку с этим
+    названием. Для того, чтобы выбрать несколько позиций зажимаем Ctrl и кликаем на нужные позиции."""
+    text_lunch = """
+    Здесь выбираем СОСТАВ ЛАНЧА на выбранный день недели, который будет отображаться при нажатие на кнопку с этим
+    названием. Для того, чтобы выбрать несколько позиций зажимаем Ctrl и кликаем на нужные позиции."""
     day = models.CharField(max_length=20, editable=False)
     slug = models.SlugField(max_length=20, unique=True, editable=False)
-    food = models.ManyToManyField(Food, verbose_name= text, related_name='test2', blank=True)
+    food = models.ManyToManyField(Food, verbose_name= 'Состав меню', related_name='test2', blank=True)
+    lunch = models.ManyToManyField(Food, verbose_name= 'Состав Ланча', related_name='test21', blank=True)
 
     class Meta:
         # ordering = ('day',)
@@ -67,7 +71,7 @@ class Weeks(models.Model):
 class Feedback(models.Model):
     name = models.CharField(max_length=50, verbose_name='Имя')
     email = models.EmailField(max_length=254, verbose_name='Email')
-    subject = models.CharField(max_length=100, verbose_name='Тема письма')
+    subject = models.CharField(max_length=100, verbose_name='Тема письма', default='')
     message = models.CharField(max_length=1000, verbose_name='Текст письма')
     created_date = models.DateTimeField(default=timezone.now, verbose_name='Дата написания')
 

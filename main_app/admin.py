@@ -8,6 +8,7 @@ class ExtraCSS(admin.ModelAdmin):
         css = {
              'all': ('/static/css/admin-extra.css ',)
         }
+    filter_horizontal = ['food', 'lunch']
 
 
 @admin.register(Food)
@@ -22,7 +23,5 @@ class FeedbackAdmin(admin.ModelAdmin):
     list_filter = ['name', 'email', 'created_date']
     ordering = ('-created_date',)
 
-# admin.site.register(Food, FoodAdmin)
-# admin.site.register(Days, MyModelAdmin)
-# admin.site.register(Weeks)
+admin.site.register(Category)
 # admin.site.register(Feedback)

@@ -24,13 +24,33 @@
                     <div class="tab-pane fade show active" id="Monday" role="tabpanel" aria-labelledby="Monday-list">
                         <div class="filters-content">
                             <div class="col-12 d-flex flex-wrap justify-content-around">
+                                <div class="col-12 d-flex justify-content-center mt-3"><h2>Ланч</h2></div>
+                                <h4 class="mt-2 mb-2" style="text-align: center;">Стоимость ланча 230 руб. В стоимость включены блюда на выбор по одному:
+                                    салат, суп, горячее, гарнир и напиток.</h4>
                                 {% for i in Days_category %}
-                                <div class="col-12 d-flex justify-content-center mt-3"><h2>{{i.name}}</h2></div>
-                                {% for food in Monday %}
+                                {% for food in Monday_lunch %}
                                 {% if food.category_id == i.id %}
                                 <div class="single-menu flex-wrap mobile-menu mr-3 ml-3" style="width: 40%;">
                                     <div class="title-wrap d-flex justify-content-between">
-                                        <h4>{{food.name}}</h4>
+                                        <h4>{{food.name}}, {{food.weight}}{{food.unit}}</h4>
+                                    </div>
+                                    {%if food.description%}
+                                    <div class="text">
+                                        <p>{{food.description}}</p>
+                                    </div>
+                                    {%endif%}
+                                </div>
+                                {% endif %}
+                                {% endfor %}
+                                {% endfor %}
+                                {% for i in Days_category %}
+                                {% if i.name != 'Напитки' %}
+                                <div class="col-12 d-flex justify-content-center mt-3"><h2>{{i.name}}</h2></div>
+                                {% for food in Monday_menu %}
+                                {% if food.category_id == i.id %}
+                                <div class="single-menu flex-wrap mobile-menu mr-3 ml-3" style="width: 40%;">
+                                    <div class="title-wrap d-flex justify-content-between">
+                                        <h4>{{food.name}}, {{food.weight}}{{food.unit}}</h4>
                                         <h4 class="price">{{food.price}}р.</h4>
                                     </div>
                                     {%if food.description%}
@@ -41,6 +61,7 @@
                                 </div>
                                 {% endif %}
                                 {% endfor %}
+                                {% endif %}
                                 {% endfor %}
                             </div>
                         </div>
@@ -48,13 +69,33 @@
                     <div class="tab-pane fade" id="Tuesday" role="tabpanel" aria-labelledby="Tuesday-list">
                         <div class="filters-content">
                             <div class="col-12 d-flex flex-wrap justify-content-around">
+                                <div class="col-12 d-flex justify-content-center mt-3"><h2>Ланч</h2></div>
+                                <h4 class="mt-2 mb-2" style="text-align: center;">Стоимость ланча 230 руб. В стоимость включены блюда на выбор по одному:
+                                    салат, суп, горячее, гарнир и напиток.</h4>
                                 {% for i in Days_category %}
-                                <div class="col-12 d-flex justify-content-center mt-3"><h2>{{i.name}}</h2></div>
-                                {% for food in Tuesday %}
+                                {% for food in Tuesday_lunch %}
                                 {% if food.category_id == i.id %}
                                 <div class="single-menu flex-wrap mobile-menu mr-3 ml-3" style="width: 40%;">
                                     <div class="title-wrap d-flex justify-content-between">
-                                        <h4>{{food.name}}</h4>
+                                        <h4>{{food.name}}, {{food.weight}}{{food.unit}}</h4>
+                                    </div>
+                                    {%if food.description%}
+                                    <div class="text">
+                                        <p>{{food.description}}</p>
+                                    </div>
+                                    {%endif%}
+                                </div>
+                                {% endif %}
+                                {% endfor %}
+                                {% endfor %}
+                                {% for i in Days_category %}
+                                {% if i.name != 'Напитки' %}
+                                <div class="col-12 d-flex justify-content-center mt-3"><h2>{{i.name}}</h2></div>
+                                {% for food in Tuesday_menu %}
+                                {% if food.category_id == i.id %}
+                                <div class="single-menu flex-wrap mobile-menu mr-3 ml-3" style="width: 40%;">
+                                    <div class="title-wrap d-flex justify-content-between">
+                                        <h4>{{food.name}}, {{food.weight}}{{food.unit}}</h4>
                                         <h4 class="price">{{food.price}}р.</h4>
                                     </div>
                                     {%if food.description%}
@@ -65,6 +106,7 @@
                                 </div>
                                 {% endif %}
                                 {% endfor %}
+                                {% endif %}
                                 {% endfor %}
                             </div>
                         </div>
@@ -72,13 +114,33 @@
                     <div class="tab-pane fade" id="Wednesday" role="tabpanel" aria-labelledby="Wednesday-list">
                         <div class="filters-content">
                             <div class="col-12 d-flex flex-wrap justify-content-around">
+                                <div class="col-12 d-flex justify-content-center mt-3"><h2>Ланч</h2></div>
+                                <h4 class="mt-2 mb-2" style="text-align: center;">Стоимость ланча 230 руб. В стоимость включены блюда на выбор по одному:
+                                    салат, суп, горячее, гарнир и напиток.</h4>
                                 {% for i in Days_category %}
-                                <div class="col-12 d-flex justify-content-center mt-3"><h2>{{i.name}}</h2></div>
-                                {% for food in Wednesday %}
+                                {% for food in Wednesday_lunch %}
                                 {% if food.category_id == i.id %}
                                 <div class="single-menu flex-wrap mobile-menu mr-3 ml-3" style="width: 40%;">
                                     <div class="title-wrap d-flex justify-content-between">
-                                        <h4>{{food.name}}</h4>
+                                        <h4>{{food.name}}, {{food.weight}}{{food.unit}}</h4>
+                                    </div>
+                                    {%if food.description%}
+                                    <div class="text">
+                                        <p>{{food.description}}</p>
+                                    </div>
+                                    {%endif%}
+                                </div>
+                                {% endif %}
+                                {% endfor %}
+                                {% endfor %}
+                                {% for i in Days_category %}
+                                {% if i.name != 'Напитки' %}
+                                <div class="col-12 d-flex justify-content-center mt-3"><h2>{{i.name}}</h2></div>
+                                {% for food in Wednesday_menu %}
+                                {% if food.category_id == i.id %}
+                                <div class="single-menu flex-wrap mobile-menu mr-3 ml-3" style="width: 40%;">
+                                    <div class="title-wrap d-flex justify-content-between">
+                                        <h4>{{food.name}}, {{food.weight}}{{food.unit}}</h4>
                                         <h4 class="price">{{food.price}}р.</h4>
                                     </div>
                                     {%if food.description%}
@@ -89,6 +151,7 @@
                                 </div>
                                 {% endif %}
                                 {% endfor %}
+                                {% endif %}
                                 {% endfor %}
                             </div>
                         </div>
@@ -96,13 +159,33 @@
                     <div class="tab-pane fade" id="Thursday" role="tabpanel" aria-labelledby="Thursday-list">
                         <div class="filters-content">
                             <div class="col-12 d-flex flex-wrap justify-content-around">
+                                <div class="col-12 d-flex justify-content-center mt-3"><h2>Ланч</h2></div>
+                                <h4 class="mt-2 mb-2" style="text-align: center;">Стоимость ланча 230 руб. В стоимость включены блюда на выбор по одному:
+                                    салат, суп, горячее, гарнир и напиток.</h4>
                                 {% for i in Days_category %}
-                                <div class="col-12 d-flex justify-content-center mt-3"><h2>{{i.name}}</h2></div>
-                                {% for food in Thursday %}
+                                {% for food in Thursday_lunch %}
                                 {% if food.category_id == i.id %}
                                 <div class="single-menu flex-wrap mobile-menu mr-3 ml-3" style="width: 40%;">
                                     <div class="title-wrap d-flex justify-content-between">
-                                        <h4>{{food.name}}</h4>
+                                        <h4>{{food.name}}, {{food.weight}}{{food.unit}}</h4>
+                                    </div>
+                                    {%if food.description%}
+                                    <div class="text">
+                                        <p>{{food.description}}</p>
+                                    </div>
+                                    {%endif%}
+                                </div>
+                                {% endif %}
+                                {% endfor %}
+                                {% endfor %}
+                                {% for i in Days_category %}
+                                {% if i.name != 'Напитки' %}
+                                <div class="col-12 d-flex justify-content-center mt-3"><h2>{{i.name}}</h2></div>
+                                {% for food in Thursday_menu %}
+                                {% if food.category_id == i.id %}
+                                <div class="single-menu flex-wrap mobile-menu mr-3 ml-3" style="width: 40%;">
+                                    <div class="title-wrap d-flex justify-content-between">
+                                        <h4>{{food.name}}, {{food.weight}}{{food.unit}}</h4>
                                         <h4 class="price">{{food.price}}р.</h4>
                                     </div>
                                     {%if food.description%}
@@ -113,6 +196,7 @@
                                 </div>
                                 {% endif %}
                                 {% endfor %}
+                                {% endif %}
                                 {% endfor %}
                             </div>
                         </div>
@@ -120,13 +204,33 @@
                     <div class="tab-pane fade" id="Friday" role="tabpanel" aria-labelledby="Friday-list">
                         <div class="filters-content">
                             <div class="col-12 d-flex flex-wrap justify-content-around">
+                                <div class="col-12 d-flex justify-content-center mt-3"><h2>Ланч</h2></div>
+                                <h4 class="mt-2 mb-2" style="text-align: center;">Стоимость ланча 230 руб. В стоимость включены блюда на выбор по одному:
+                                    салат, суп, горячее, гарнир и напиток.</h4>
                                 {% for i in Days_category %}
-                                <div class="col-12 d-flex justify-content-center mt-3"><h2>{{i.name}}</h2></div>
-                                {% for food in Friday %}
+                                {% for food in Friday_lunch %}
                                 {% if food.category_id == i.id %}
                                 <div class="single-menu flex-wrap mobile-menu mr-3 ml-3" style="width: 40%;">
                                     <div class="title-wrap d-flex justify-content-between">
-                                        <h4>{{food.name}}</h4>
+                                        <h4>{{food.name}}, {{food.weight}}{{food.unit}}</h4>
+                                    </div>
+                                    {%if food.description%}
+                                    <div class="text">
+                                        <p>{{food.description}}</p>
+                                    </div>
+                                    {%endif%}
+                                </div>
+                                {% endif %}
+                                {% endfor %}
+                                {% endfor %}
+                                {% for i in Days_category %}
+                                {% if i.name != 'Напитки' %}
+                                <div class="col-12 d-flex justify-content-center mt-3"><h2>{{i.name}}</h2></div>
+                                {% for food in Friday_menu %}
+                                {% if food.category_id == i.id %}
+                                <div class="single-menu flex-wrap mobile-menu mr-3 ml-3" style="width: 40%;">
+                                    <div class="title-wrap d-flex justify-content-between">
+                                        <h4>{{food.name}}, {{food.weight}}{{food.unit}}</h4>
                                         <h4 class="price">{{food.price}}р.</h4>
                                     </div>
                                     {%if food.description%}
@@ -137,6 +241,7 @@
                                 </div>
                                 {% endif %}
                                 {% endfor %}
+                                {% endif %}
                                 {% endfor %}
                             </div>
                         </div>
@@ -148,7 +253,7 @@
                                 {% for food in Breakfast %}
                                 <div class="single-menu flex-wrap mobile-menu mr-3 ml-3" style="width: 40%; max-width: 500px">
                                     <div class="title-wrap d-flex justify-content-between">
-                                        <h4>{{food.name}}</h4>
+                                        <h4>{{food.name}}, {{food.weight}}{{food.unit}}</h4>
                                         <h4 class="price">{{food.price}}р.</h4>
                                     </div>
                                     {%if food.description%}
@@ -168,7 +273,7 @@
                                 {% for food in Bakery %}
                                 <div class="single-menu flex-wrap mobile-menu mr-3 ml-3" style="width: 40%; max-width: 500px">
                                     <div class="title-wrap d-flex justify-content-between">
-                                        <h4>{{food.name}}</h4>
+                                        <h4>{{food.name}}, {{food.weight}}{{food.unit}}</h4>
                                         <h4 class="price">{{food.price}}р.</h4>
                                     </div>
                                     {%if food.description%}
@@ -188,7 +293,7 @@
                                 {% for food in Drinks %}
                                 <div class="single-menu flex-wrap mobile-menu mr-3 ml-3" style="width: 40%; max-width: 500px">
                                     <div class="title-wrap d-flex justify-content-between">
-                                        <h4>{{food.name}}</h4>
+                                        <h4>{{food.name}}, {{food.weight}}{{food.unit}}</h4>
                                         <h4 class="price">{{food.price}}р.</h4>
                                     </div>
                                     {%if food.description%}
