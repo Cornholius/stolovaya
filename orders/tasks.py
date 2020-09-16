@@ -11,7 +11,6 @@ def order_created(order_id):
     order = Order.objects.get(id=order_id)
     subject = 'Ваш заказ на сайте <...> успешно оформлен'.format(order_id)
     message = 'Здравствуй {},\n' \
-              'Тебе хватило мозгов оформить заказ, поздравляю!\n' \
               'Твой заказ под номером {} ждёт тебя.\n ' \
               'Приди и забери свой хавчик.'.format(order.first_name,
                                              order.id)

@@ -1,7 +1,7 @@
 from celery import task
 from django.core.mail import send_mail
 from .models import Feedback
-
+from django.conf import settings
 
 @task
 def feedback_created(order_id):
@@ -18,9 +18,5 @@ def feedback_created(order_id):
     Отзыв:\n
     {}    
     """.format(order.name, order.email, order.created_date.strftime("%d.%m.%Y %H:%m"), order.message)
-    mail_sent = send_mail(subject,
-                          message,
-                          'yar.corn@yandex.ru',
-                          ['y.layshkin@gmail.com'])
-
+    mail_sent = send_mail(subject, message, settings.EMAIL_HOST_USER, ['y.layshkin@gmail.com'])
     return mail_sent
